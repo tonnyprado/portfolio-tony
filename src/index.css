@@ -852,13 +852,37 @@ img { display: block; max-width: 100%; }
   /* Services responsive */
   .services-card {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 24px;
+    padding: 28px 22px;
+    border-radius: 20px;
+    margin: 0 20px;
+    max-width: calc(100% - 40px);
   }
   .services-left {
     text-align: center;
   }
   .services-label {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+  .services-title {
+    font-size: 32px;
+  }
+  .service-header {
+    padding: 16px 0;
+  }
+  .service-name {
+    font-size: 18px;
+  }
+  .service-toggle {
+    font-size: 22px;
+  }
+  .service-content p {
+    font-size: 14px;
+  }
+  .service-tags .tag {
+    font-size: 11px;
+    padding: 4px 10px;
   }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
