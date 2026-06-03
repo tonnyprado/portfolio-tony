@@ -20,9 +20,17 @@ function Contact({ lang }) {
           <a className="contact-link" href={`mailto:${info.email}`}>
             <span className="v"><span className="k">Email</span>{info.email}</span><Arrow />
           </a>
-          <a className="contact-link" href={`tel:+${info.phoneRaw}`}>
-            <span className="v"><span className="k">Tel</span>{info.phone}</span><Arrow />
-          </a>
+          <div className="contact-link phone-options">
+            <span className="v"><span className="k">{lang === 'es' ? 'Teléfono' : 'Phone'}</span>{info.phone}</span>
+            <div className="phone-btns">
+              <a className="phone-btn whatsapp" href={`https://wa.me/${info.phoneRaw}`} target="_blank" rel="noopener noreferrer">
+                WhatsApp
+              </a>
+              <a className="phone-btn call" href={`tel:+${info.phoneRaw}`}>
+                {lang === 'es' ? 'Llamar' : 'Call'}
+              </a>
+            </div>
+          </div>
           <a className="contact-link" href={info.linkedinUrl} target="_blank" rel="noopener noreferrer">
             <span className="v"><span className="k">LinkedIn</span>{info.linkedin}</span><Arrow />
           </a>
