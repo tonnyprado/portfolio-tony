@@ -196,18 +196,32 @@ export const PORT = {
       period: { es: "Ago 2025 — Presente", en: "Aug 2025 — Present" },
       roleTag: { es: "Co-Fundador & Full-Stack", en: "Co-Founder & Full-Stack" },
       tagline: {
-        es: "Plataforma SaaS con arquitectura de microservicios y RAG que reduce costos de IA hasta 95%.",
-        en: "SaaS platform with microservices architecture and RAG cutting AI costs by up to 95%.",
+        es: "Asistente de marketing con IA para fundadores, marketers y creadores de contenido.",
+        en: "AI-powered marketing assistant for founders, marketers and content creators.",
       },
       lead: {
-        es: "Plataforma SaaS con arquitectura de microservicios. Como Co-Fundador y desarrollador full-stack implementé RAG con ChromaDB logrando 70–80% de reducción en costo de tokens, y un enfoque híbrido ML+IA que reduce costos de OpenAI 90–95%.",
-        en: "SaaS platform with microservices architecture. As Co-Founder and full-stack developer I implemented RAG with ChromaDB achieving 70–80% token-cost reduction, plus a hybrid ML+AI approach cutting OpenAI costs by 90–95%.",
+        es: "Plataforma de asistente de marketing impulsada por IA que ayuda a desarrollar estrategias inteligentes, crear contenido y gestionar campañas en redes sociales. Arquitectura de microservicios con dos backends (Auth en Spring Boot y AI en FastAPI) y RAG con ChromaDB que reduce costos de tokens 70–80%.",
+        en: "AI-powered marketing assistant platform that helps develop smart strategies, create content and manage social media campaigns. Microservices architecture with two backends (Auth on Spring Boot and AI on FastAPI) and RAG with ChromaDB reducing token costs by 70–80%.",
       },
       highlights: {
-        es: ["Autenticación OAuth2 multi-proveedor (Meta, Google, Apple)","Híbrido ML+IA reduciendo costos de OpenAI 90–95%","100+ usuarios registrados, desplegado en Railway"],
-        en: ["OAuth2 multi-provider auth (Meta, Google, Apple)","Hybrid ML+AI reducing OpenAI costs by 90–95%","100+ registered users, deployed on Railway"],
+        es: [
+          "Chat con IA conversacional para estrategia de marketing y recomendaciones personalizadas",
+          "Calendario de contenido visual con sugerencias de horarios óptimos y drag-and-drop",
+          "Generador de contenido: brainstorming por pilares, scripts y editor de imágenes (Fabric.js)",
+          "Dashboard de analytics con métricas de rendimiento e insights",
+          "Integraciones con Instagram Business, Meta Ads, Google Analytics, TikTok y YouTube",
+          "100+ creadores en lista de espera, actualmente en beta/acceso anticipado"
+        ],
+        en: [
+          "Conversational AI chat for marketing strategy and personalized recommendations",
+          "Visual content calendar with optimal timing suggestions and drag-and-drop",
+          "Content generator: pillar-based brainstorming, scripts and image editor (Fabric.js)",
+          "Analytics dashboard with performance metrics and insights",
+          "Integrations with Instagram Business, Meta Ads, Google Analytics, TikTok and YouTube",
+          "100+ creators on waitlist, currently in beta/early access"
+        ],
       },
-      tech: ["React","FastAPI","Spring Boot","PostgreSQL","ChromaDB","Docker"],
+      tech: ["React 19","React Router 7","Material-UI","Tailwind CSS","Framer Motion","Spring Boot","FastAPI","PostgreSQL","ChromaDB"],
       link: "https://www.marnee-ia.com",
       media: {
         hero: "marnee/mainpage.png",
