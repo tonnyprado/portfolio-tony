@@ -1,5 +1,5 @@
 import { PORT } from '../data';
-import graduationPhoto from '../assets/graduation-photo.jpeg';
+import tituloPhoto from '../assets/titulo.jpg';
 import awsBadge from '../assets/aws-badge.png';
 
 function Education({ lang }) {
@@ -27,10 +27,10 @@ function Education({ lang }) {
           </div>
           <div className="edu-photo-wrap reveal d2">
             <div className="edu-photo-frame">
-              <img src={graduationPhoto} alt="Graduación - Universidad de Colima" className="edu-photo" />
+              <img src={tituloPhoto} alt="Título Profesional - Universidad de Colima" className="edu-photo" />
             </div>
             <p className="edu-photo-caption">
-              {lang === 'es' ? 'Recibiendo mi título' : 'Receiving my degree'}
+              {lang === 'es' ? 'Mi título profesional' : 'My professional degree'}
             </p>
           </div>
         </div>
