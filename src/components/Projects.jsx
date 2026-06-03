@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { PORT } from '../data';
 
 /* Import all assets from the assets folder */
@@ -252,14 +252,43 @@ function Projects({ lang, onOpen }) {
   const list = PORT.projectList;
   const t = (o) => o[lang];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const slideContainerRef = useRef(null);
+
+  const isMobile = () => typeof window !== 'undefined' && window.innerWidth <= 980;
 
   const goTo = (index) => {
     if (index < 0 || index >= list.length || index === currentIndex) return;
     setCurrentIndex(index);
+    // En móvil, hacer scroll al panel
+    if (isMobile() && slideContainerRef.current) {
+      const panel = slideContainerRef.current.children[index];
+      if (panel) {
+        panel.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      }
+    }
   };
 
   const goPrev = () => goTo(currentIndex - 1);
   const goNext = () => goTo(currentIndex + 1);
+
+  // Detectar scroll en móvil para actualizar el índice
+  useEffect(() => {
+    const container = slideContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      if (!isMobile()) return;
+      const scrollLeft = container.scrollLeft;
+      const panelWidth = container.children[0]?.offsetWidth || 1;
+      const newIndex = Math.round(scrollLeft / panelWidth);
+      if (newIndex !== currentIndex && newIndex >= 0 && newIndex < list.length) {
+        setCurrentIndex(newIndex);
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, [currentIndex, list.length]);
 
   const progress = ((currentIndex + 1) / list.length) * 100;
 
@@ -284,7 +313,7 @@ function Projects({ lang, onOpen }) {
             <ChevronLeft />
           </button>
 
-          <div className="hproj-slide-container">
+          <div className="hproj-slide-container" ref={slideContainerRef}>
             {list.map((project, i) => (
               <article
                 className={`hproj-panel${i === currentIndex ? ' active' : ''}${i < currentIndex ? ' prev' : ''}${i > currentIndex ? ' next' : ''}`}

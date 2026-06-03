@@ -44,7 +44,6 @@ function Hero({ lang }) {
           <div className="hero-actions">
             <a href="#projects" className="btn btn-dark">
               {t(h.viewWork)}
-              <ArrowIcon />
             </a>
             <a href="#contact" className="btn btn-ghost">
               {t(h.contact)}
