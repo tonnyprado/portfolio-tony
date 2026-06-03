@@ -1,0 +1,11 @@
+# Robots.txt for Marco Prado Portfolio
+# https://www.marcos-portfolio.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.marcos-portfolio.com/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1

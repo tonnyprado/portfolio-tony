@@ -180,6 +180,35 @@ function ProjectModal({ project, lang, onClose }) {
             ))}
           </ul>
 
+          {/* Secciones detalladas del caso de estudio */}
+          {project.caseSections && project.caseSections.length > 0 && (
+            <div className="modal-case-sections">
+              {project.caseSections.map((section, idx) => (
+                <div className="case-section" key={idx}>
+                  <h3 className="case-section-title">{t(section.title)}</h3>
+                  <p className="case-section-content">{t(section.content)}</p>
+                  {section.images && section.images.length > 0 && (
+                    <div className="case-section-images">
+                      {section.images.map((imgPath, imgIdx) => {
+                        const src = getAsset(imgPath);
+                        const isVideo = imgPath.endsWith('.mp4') || imgPath.endsWith('.mov');
+                        return src ? (
+                          <div className="case-section-img" key={imgIdx} onClick={() => !isVideo && setLightboxImg(src)}>
+                            {isVideo ? (
+                              <video src={src} controls muted loop playsInline style={{ width: '100%', borderRadius: 'inherit' }} />
+                            ) : (
+                              <img src={src} alt={`${t(section.title)} ${imgIdx + 1}`} />
+                            )}
+                          </div>
+                        ) : null;
+                      })}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
           <div className="modal-gallery">
             {galleryImages.length > 0 ? (
               galleryImages.map((imgPath, i) => {

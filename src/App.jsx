@@ -47,6 +47,7 @@ function App() {
         <About lang={lang} />
         <Services lang={lang} />
         <Projects lang={lang} onOpen={openProject} />
+        <Marquee variant="yellow" />
         <Experience lang={lang} />
         <Skills lang={lang} />
         <Education lang={lang} />

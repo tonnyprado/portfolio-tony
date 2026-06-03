@@ -224,6 +224,16 @@ img { display: block; max-width: 100%; }
 .marquee-item .star { color: var(--accent); font-size: 0.7em; }
 @keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
+/* Yellow variant marquee */
+.marquee-yellow {
+  background: var(--accent);
+  color: var(--ink);
+}
+.marquee-yellow .star {
+  color: var(--ink);
+  opacity: 0.5;
+}
+
 /* ============================================================
    SECTION SHELL
    ============================================================ */
@@ -788,6 +798,27 @@ img { display: block; max-width: 100%; }
 .modal-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
 .modal-tags .tag { border-color: var(--line-strong); color: var(--ink-2); }
 .modal-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Case Study Sections */
+.modal-case-sections { margin: 40px 0 30px; }
+.case-section { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--line); }
+.case-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.case-section-title { font-family: var(--font-head); font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+.case-section-title::before { content: ""; width: 4px; height: 22px; background: var(--accent); border-radius: 2px; }
+.case-section-content { font-size: 16px; color: var(--ink); line-height: 1.7; max-width: 70ch; white-space: pre-line; }
+.case-section-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 20px; }
+.case-section-img { border-radius: 12px; overflow: hidden; cursor: zoom-in; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.case-section-img:hover { transform: scale(1.02); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.25); }
+.case-section-img img { width: 100%; height: auto; display: block; border-radius: inherit; }
+.case-section-img video { width: 100%; border-radius: inherit; cursor: default; }
+.case-section-img:has(video) { cursor: default; }
+.case-section-img:has(video):hover { transform: none; }
+
+@media (max-width: 768px) {
+  .case-section-images { grid-template-columns: 1fr; }
+  .case-section-title { font-size: 18px; }
+  .case-section-content { font-size: 15px; }
+}
 
 /* ============================================================
    REVEAL
