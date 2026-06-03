@@ -84,8 +84,8 @@ window.PORT = {
       eyebrow: { es: "Contacto", en: "Get in touch" },
       title: { es: ["Hablemos de ","tu idea","."], en: ["Let's talk about ","your idea","."] },
       lead: {
-        es: "¿Tienes un proyecto en mente o quieres saludar? Me encantaría escucharte. Creemos algo increíble juntos.",
-        en: "Have a project in mind or just want to say hi? I'd love to hear from you. Let's create something amazing together.",
+        es: "¿Tienes un proyecto en mente? Me encantaría escucharte. Creemos algo increíble juntos.",
+        en: "Have a project in mind? I'd love to hear from you. Let's create something amazing together.",
       },
     },
     footer: {
