@@ -2,8 +2,8 @@
 export const PORT = {
   ui: {
     nav: {
-      es: [["about","Sobre mí"],["projects","Proyectos"],["experience","Experiencia"],["skills","Skills"],["education","Formación"],["contact","Contacto"]],
-      en: [["about","About"],["projects","Projects"],["experience","Experience"],["skills","Skills"],["education","Education"],["contact","Contact"]],
+      es: [["about","Sobre mí"],["services","Servicios"],["projects","Proyectos"],["experience","Experiencia"],["skills","Skills"],["contact","Contacto"]],
+      en: [["about","About"],["services","Services"],["projects","Projects"],["experience","Experience"],["skills","Skills"],["contact","Contact"]],
     },
     letsTalk: { es: "Hablemos", en: "Let's talk" },
     hero: {
@@ -43,6 +43,52 @@ export const PORT = {
         es: [["5+","Años de experiencia"],["3","Startups co-fundadas"],["100+","Usuarios en producción"],["IBM","Banca enterprise"]],
         en: [["5+","Years of experience"],["3","Startups co-founded"],["100+","Users in production"],["IBM","Enterprise banking"]],
       },
+    },
+    services: {
+      title: { es: ["Lo que puedo", "hacer por ti"], en: ["What I can", "do for you"] },
+      lead: {
+        es: "Desarrollo soluciones digitales completas, desde la idea inicial hasta el producto funcionando en producción.",
+        en: "I build complete digital solutions, from the initial idea to the product running in production.",
+      },
+      cta: { es: "Hablemos de tu proyecto", en: "Let's discuss your project" },
+      items: [
+        {
+          icon: "web",
+          title: { es: "Sitios Web", en: "Websites" },
+          desc: {
+            es: "Desde landing pages de alto impacto hasta sitios web completos con CMS. Diseño responsive, optimizado para SEO y velocidad.",
+            en: "From high-impact landing pages to full websites with CMS. Responsive design, optimized for SEO and speed.",
+          },
+          tags: ["React", "Next.js", "Tailwind CSS"],
+        },
+        {
+          icon: "mobile",
+          title: { es: "Apps Móviles", en: "Mobile Apps" },
+          desc: {
+            es: "Aplicaciones nativas para iOS y Android con un solo código base. Experiencia fluida, notificaciones push y funcionamiento offline.",
+            en: "Native apps for iOS and Android with a single codebase. Smooth experience, push notifications and offline support.",
+          },
+          tags: ["React Native", "Expo", "Firebase"],
+        },
+        {
+          icon: "platform",
+          title: { es: "Plataformas SaaS", en: "SaaS Platforms" },
+          desc: {
+            es: "Sistemas complejos con arquitectura de microservicios, APIs robustas, autenticación segura e integraciones con terceros.",
+            en: "Complex systems with microservices architecture, robust APIs, secure authentication and third-party integrations.",
+          },
+          tags: ["Spring Boot", "FastAPI", "PostgreSQL"],
+        },
+        {
+          icon: "cloud",
+          title: { es: "Cloud & DevOps", en: "Cloud & DevOps" },
+          desc: {
+            es: "Infraestructura escalable en la nube, CI/CD automatizado, contenedores y monitoreo. Tu app lista para crecer.",
+            en: "Scalable cloud infrastructure, automated CI/CD, containers and monitoring. Your app ready to scale.",
+          },
+          tags: ["AWS", "Docker", "Railway"],
+        },
+      ],
     },
     projects: {
       eyebrow: { es: "Trabajo seleccionado", en: "Selected work" },

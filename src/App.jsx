@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import About from './components/About';
+import Services from './components/Services';
 import { Projects, ProjectModal } from './components/Projects';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
@@ -44,6 +45,7 @@ function App() {
         <Hero lang={lang} />
         <Marquee />
         <About lang={lang} />
+        <Services lang={lang} />
         <Projects lang={lang} onOpen={openProject} />
         <Experience lang={lang} />
         <Skills lang={lang} />
