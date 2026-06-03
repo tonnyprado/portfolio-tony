@@ -1,76 +1,58 @@
-import './Education.css'
+import { PORT } from '../data';
+import graduationPhoto from '../assets/graduation-photo.jpeg';
+import awsBadge from '../assets/aws-badge.png';
 
-function Education() {
-  const education = [
-    {
-      id: 1,
-      institution: 'University of Colima',
-      degree: "Bachelor's Degree – Computer Systems Engineering",
-      period: 'June 2021',
-      description: 'Hands-on experience with Python and Java for backend development. Knowledge in algorithms and data structures with C/C++ and Python. Practical skills in Linux environments and command line.',
-    },
-    {
-      id: 2,
-      institution: 'University of Colima',
-      degree: 'Diploma – Information Technologies for Development and Innovation',
-      period: 'June 2022',
-      description: 'Advanced studies in modern information technologies and innovative development practices.',
-    },
-    {
-      id: 3,
-      institution: 'University of Colima',
-      degree: 'High School Diploma – Programming',
-      period: 'June 2017',
-      description: 'Foundation in algorithms and data structures solving programming challenges in C/C++ and C#.',
-    },
-  ]
-
-  const certifications = [
-    {
-      id: 1,
-      name: 'AWS Certified Cloud Practitioner',
-      issuer: 'Amazon Web Services',
-    },
-  ]
-
+function Education({ lang }) {
+  const e = PORT.ui.education;
+  const t = (o) => o[lang];
   return (
-    <section className="education section bg-alt" id="education">
+    <section className="section education" id="education">
       <div className="container">
-        <h2 className="section-title">Education</h2>
-
-        <div className="timeline">
-          {education.map((item, index) => (
-            <div
-              key={item.id}
-              className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
-            >
-              <div className="timeline-content">
-                <span className="timeline-period">{item.period}</span>
-                <h3>{item.degree}</h3>
-                <h4>{item.institution}</h4>
-                <p>{item.description}</p>
+        <div className="section-head">
+          <div>
+            <h2 className="section-title reveal d1">{t(e.title)}</h2>
+          </div>
+          <p className="lead reveal d2">{t(e.lead)}</p>
+        </div>
+        <div className="edu-grid">
+          <div className="edu-time">
+            {PORT.education.map((it, i) => (
+              <div className="edu-item reveal" key={i} style={{ transitionDelay: `${i * 0.08}s` }}>
+                <span className="edu-period">{t(it.period)}</span>
+                <h3>{t(it.degree)}</h3>
+                <h4>{it.inst}</h4>
+                <p>{t(it.desc)}</p>
               </div>
-              <div className="timeline-dot"></div>
+            ))}
+          </div>
+          <div className="edu-photo-wrap reveal d2">
+            <div className="edu-photo-frame">
+              <img src={graduationPhoto} alt="Graduación - Universidad de Colima" className="edu-photo" />
             </div>
+            <p className="edu-photo-caption">
+              {lang === 'es' ? 'Recibiendo mi título' : 'Receiving my degree'}
+            </p>
+          </div>
+        </div>
+        <div className="certs reveal">
+          <span className="lab">{t(e.certsLabel)}</span>
+          {PORT.certs.map((c, i) => (
+            <a href={c.link} target="_blank" rel="noopener noreferrer" className="cert-card" key={i}>
+              <img src={awsBadge} alt={c.name} className="cert-badge-img" />
+              <div className="cert-info">
+                <span className="cert-name">{c.name}</span>
+                <span className="cert-issuer">{c.issuer}</span>
+                <span className="cert-link">
+                  {lang === 'es' ? 'Ver credencial' : 'View credential'}
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17 17 7M9 7h8v8" /></svg>
+                </span>
+              </div>
+            </a>
           ))}
         </div>
-
-        {certifications.length > 0 && (
-          <div className="certifications">
-            <h3 className="certifications-title">Certifications</h3>
-            <div className="certifications-list">
-              {certifications.map((cert) => (
-                <div key={cert.id} className="certification-badge">
-                  <span className="cert-name">{cert.name}</span>
-                  <span className="cert-issuer">{cert.issuer}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </section>
-  )
+  );
 }
 
-export default Education
+export default Education;
