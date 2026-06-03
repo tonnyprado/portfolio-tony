@@ -48,8 +48,8 @@ export const PORT = {
       eyebrow: { es: "Trabajo seleccionado", en: "Selected work" },
       title: { es: ["Proyectos","destacados"], en: ["Featured","projects"] },
       lead: {
-        es: "Plataformas reales que diseñé y desarrollé end-to-end. Desliza para recorrerlas — haz clic en cualquiera para ver el caso completo.",
-        en: "Real platforms I designed and built end-to-end. Scroll to move through them — click any to open the full case study.",
+        es: "Plataformas reales que diseñé y desarrollé end-to-end. Desliza para recorrerlas, haz clic en cualquiera para ver el caso completo.",
+        en: "Real platforms I designed and built end-to-end. Scroll to explore, click any to open the full case study.",
       },
       hint: { es: "Desliza para explorar", en: "Scroll to explore" },
       open: { es: "Ver caso completo", en: "View full case" },
@@ -59,8 +59,8 @@ export const PORT = {
       highlights: { es: "Lo más destacado", en: "Highlights" },
       visit: { es: "Visitar sitio", en: "Visit site" },
       media: { es: "Galería", en: "Gallery" },
-      videoLabel: { es: "video walkthrough — coloca tu .mp4 aquí", en: "video walkthrough — drop your .mp4 here" },
-      imgLabel: { es: "imagen del proyecto — coloca tu captura aquí", en: "project image — drop your screenshot here" },
+      videoLabel: { es: "video walkthrough", en: "video walkthrough" },
+      imgLabel: { es: "imagen del proyecto", en: "project image" },
     },
     experience: {
       eyebrow: { es: "Trayectoria", en: "Career" },
@@ -115,11 +115,11 @@ export const PORT = {
     {
       company: "IBM", short: "IBM",
       role: { es: "Application Developer", en: "Application Developer" },
-      period: { es: "Jun 2021 — Jul 2025", en: "Jun 2021 — Jul 2025" },
+      period: { es: "Jun 2021 - Jul 2025", en: "Jun 2021 - Jul 2025" },
       desc: {
         es: [
           "Desarrollé y mantuve microservicios Spring Boot sobre Red Hat OpenShift con Kafka para arquitectura event-driven, sirviendo transacciones bancarias de alto volumen",
-          "Lideré la migración de un monolito legacy WebSphere a microservicios Spring Boot con patrón strangler fig — completada sin downtime en 6 meses",
+          "Lideré la migración de un monolito legacy WebSphere a microservicios Spring Boot con patrón strangler fig, completada sin downtime en 6 meses",
           "Resolví un cuello de botella crítico de rendimiento (respuesta de API de 1s a 8s bajo carga). Analicé métricas de Prometheus y logs de Kibana, identifiqué problemas N+1",
           "Implementé pipelines CI/CD con GitLab y Docker, automatizando testing (JUnit, Mockito) y despliegues",
           "Gestioné calidad de código con SonarQube, manteniendo 80%+ de cobertura y resolviendo vulnerabilidades de seguridad",
@@ -127,7 +127,7 @@ export const PORT = {
         ],
         en: [
           "Developed and maintained Spring Boot microservices on Red Hat OpenShift with Kafka for event-driven architecture, serving high-volume banking transactions",
-          "Led migration from a legacy WebSphere monolith to Spring Boot microservices using the strangler fig pattern — completed with zero downtime over a 6-month period",
+          "Led migration from a legacy WebSphere monolith to Spring Boot microservices using the strangler fig pattern. Completed with zero downtime over 6 months",
           "Debugged a critical performance bottleneck (API response from 1s to 8s under load). Analyzed Prometheus metrics and Kibana logs, identified N+1 query issues",
           "Implemented CI/CD pipelines with GitLab and Docker, automating testing (JUnit, Mockito) and deployment workflows",
           "Managed code quality with SonarQube, maintaining 80%+ test coverage and resolving security vulnerabilities",
@@ -139,7 +139,7 @@ export const PORT = {
     {
       company: "IBM", short: "IBM",
       role: { es: "Application Developer Intern", en: "Application Developer Intern" },
-      period: { es: "Dic 2020 — Jun 2021", en: "Dec 2020 — Jun 2021" },
+      period: { es: "Dic 2020 - Jun 2021", en: "Dec 2020 - Jun 2021" },
       desc: {
         es: [
           "Apoyo en pruebas y corrección de errores de aplicaciones Java Spring Boot",
@@ -159,7 +159,7 @@ export const PORT = {
   education: [
     {
       inst: "Universidad de Colima",
-      degree: { es: "Ingeniería en Sistemas Computacionales", en: "B.Sc. — Computer Systems Engineering" },
+      degree: { es: "Ingeniería en Sistemas Computacionales", en: "B.Sc. in Computer Systems Engineering" },
       period: { es: "2021", en: "2021" },
       desc: {
         es: "Experiencia práctica con Python y Java para backend. Conocimiento en algoritmos y estructuras de datos con C/C++ y Python. Habilidades en entornos Linux y línea de comandos.",
@@ -168,7 +168,7 @@ export const PORT = {
     },
     {
       inst: "Universidad de Colima",
-      degree: { es: "Diplomado — TI para Desarrollo e Innovación", en: "Diploma — IT for Development and Innovation" },
+      degree: { es: "Diplomado en TI para Desarrollo e Innovación", en: "Diploma in IT for Development and Innovation" },
       period: { es: "2022", en: "2022" },
       desc: {
         es: "Estudios avanzados en tecnologías de la información modernas y prácticas de desarrollo innovadoras.",
@@ -177,7 +177,7 @@ export const PORT = {
     },
     {
       inst: "Universidad de Colima",
-      degree: { es: "Bachillerato — Programación", en: "High School Diploma — Programming" },
+      degree: { es: "Bachillerato en Programación", en: "High School Diploma in Programming" },
       period: { es: "2017", en: "2017" },
       desc: {
         es: "Bases en algoritmos y estructuras de datos resolviendo retos de programación en C/C++ y C#.",
@@ -193,7 +193,7 @@ export const PORT = {
       id: "marnee",
       name: "MARNEE",
       hasVideo: true,
-      period: { es: "Ago 2025 — Presente", en: "Aug 2025 — Present" },
+      period: { es: "Ago 2025 - Presente", en: "Aug 2025 - Present" },
       roleTag: { es: "Co-Fundador & Full-Stack", en: "Co-Founder & Full-Stack" },
       tagline: {
         es: "Asistente de marketing con IA para fundadores, marketers y creadores de contenido.",
@@ -233,7 +233,7 @@ export const PORT = {
       id: "mendiola",
       name: "Mendiola's Logistics",
       hasVideo: true,
-      period: { es: "Mar 2026 — Presente", en: "Mar 2026 — Present" },
+      period: { es: "Mar 2026 - Presente", en: "Mar 2026 - Present" },
       roleTag: { es: "Full-Stack Dev", en: "Full-Stack Dev" },
       tagline: {
         es: "Sistema de logística y tracking de envíos con ubicación de transportistas en tiempo real.",
@@ -259,7 +259,7 @@ export const PORT = {
       id: "belle",
       name: "Belle Pielle",
       hasVideo: true,
-      period: { es: "May 2026 — Presente", en: "May 2026 — Present" },
+      period: { es: "May 2026 - Presente", en: "May 2026 - Present" },
       roleTag: { es: "Full-Stack Dev", en: "Full-Stack Dev" },
       tagline: {
         es: "Landing y sistema de reservas para un negocio de cosmetología, con dashboard de administración.",
@@ -285,7 +285,7 @@ export const PORT = {
       id: "sigapi",
       name: "SIGAPI",
       hasVideo: true,
-      period: { es: "Dic 2025 — Abr 2026", en: "Dec 2025 — Apr 2026" },
+      period: { es: "Dic 2025 - Abr 2026", en: "Dec 2025 - Apr 2026" },
       roleTag: { es: "Frontend Lead", en: "Frontend Lead" },
       tagline: {
         es: "Plataforma de modelado de diagramas en Roomie-IT, construida con React Flow en 3 semanas.",
@@ -311,7 +311,7 @@ export const PORT = {
       id: "blundy",
       name: "Blundy",
       hasVideo: true,
-      period: { es: "Jul 2025 — Nov 2025", en: "Jul 2025 — Nov 2025" },
+      period: { es: "Jul 2025 - Nov 2025", en: "Jul 2025 - Nov 2025" },
       roleTag: { es: "Full-Stack Dev", en: "Full-Stack Dev" },
       tagline: {
         es: "Plataforma e-commerce a la medida con backend serverless y arquitectura event-driven.",
