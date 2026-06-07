@@ -28,8 +28,8 @@ export const PORT = {
       eyebrow: { es: "Sobre mí", en: "About me" },
       bg: ["FULLSTACK","ENGINEER"],
       intro: {
-        es: ["Soy ", "Marco Antonio Prado García", ", Full-Stack Engineer basado en México."],
-        en: ["I'm ", "Marco Antonio Prado García", ", a Full-Stack Engineer based in Mexico."],
+        es: ["Soy ", "Marco Antonio Prado García", ", Full-Stack Engineer ", "basado en Ciudad de México", "."],
+        en: ["I'm ", "Marco Antonio Prado García", ", a Full-Stack Engineer ", "based in Mexico City", "."],
       },
       p1: {
         es: "Doy vida a ideas con código limpio y soluciones creativas. Experiencia en Spring Boot, React, Kafka y PostgreSQL, además de sistemas RAG e integraciones OAuth2.",
@@ -585,6 +585,78 @@ export const PORT = {
           content: {
             es: "• Plataforma funcionando en producción — Blundy está en línea y procesando pedidos reales\n• Proceso de compra en menos de 5 minutos — Desde que subes el dibujo hasta que pagas\n• Cero costos fijos de servidor — Solo pago por uso real\n• Automatización completa — Desde que el cliente paga hasta que recibe su tracking, todo sucede sin intervención manual\n• Sistema flexible — Puedo agregar nuevos tipos de productos o cambiar precios sin tocar código",
             en: "• Platform running in production — Blundy is online and processing real orders\n• Purchase process in less than 5 minutes — From uploading the drawing to paying\n• Zero fixed server costs — Only pay for actual use\n• Complete automation — From when the customer pays until they receive their tracking, everything happens without manual intervention\n• Flexible system — I can add new product types or change prices without touching code",
+          },
+          images: [],
+        },
+      ],
+    },
+    {
+      id: "dnhub",
+      name: "DnHub",
+      hasVideo: true,
+      period: { es: "2026", en: "2026" },
+      roleTag: { es: "Full-Stack Dev", en: "Full-Stack Dev" },
+      tagline: {
+        es: "Landing page para estudio de marketing especializado en marcas de K-Beauty.",
+        en: "Landing page for a growth & marketing studio specializing in K-Beauty brands.",
+      },
+      lead: {
+        es: "Sitio web moderno para DnHub, un estudio de marketing que ayuda a marcas de K-Beauty a expandirse globalmente. Diseño bold con tipografía impactante, sistema de design tokens, soporte bilingüe (inglés/coreano) y animaciones de scroll reveal.",
+        en: "Modern website for DnHub, a marketing studio helping K-Beauty brands expand globally. Bold design with impactful typography, design token system, bilingual support (English/Korean) and scroll reveal animations.",
+      },
+      highlights: {
+        es: [
+          "Soporte bilingüe completo (inglés y coreano) con persistencia de preferencia",
+          "Sistema de design tokens con paleta de colores y tipografía consistente",
+          "Animaciones scroll-reveal con IntersectionObserver",
+          "Diseño responsive optimizado para móviles y desktop",
+          "Componentes reutilizables: Ribbon marquee, ServiceCard, TeamCard, FAQ accordion",
+        ],
+        en: [
+          "Full bilingual support (English and Korean) with preference persistence",
+          "Design token system with consistent color palette and typography",
+          "Scroll-reveal animations with IntersectionObserver",
+          "Responsive design optimized for mobile and desktop",
+          "Reusable components: Ribbon marquee, ServiceCard, TeamCard, FAQ accordion",
+        ],
+      },
+      tech: ["React 19", "Vite", "CSS", "JavaScript"],
+      link: null,
+      media: {
+        hero: "dnhub/dnhub-hero.png",
+        video: "dnhub/dnhub-demo.mov",
+        gallery: ["dnhub/dnhub-hero.png"],
+      },
+      caseSections: [
+        {
+          title: { es: "El problema", en: "The problem" },
+          content: {
+            es: "DnHub necesitaba una presencia digital que reflejara su enfoque innovador en el marketing de K-Beauty. Querían un sitio que:\n\n• Comunicara su propuesta de valor de forma clara e impactante\n• Funcionara perfectamente tanto en inglés como en coreano para sus clientes internacionales\n• Transmitiera profesionalismo con un diseño moderno y memorable\n• Mostrara sus servicios, equipo y casos de éxito de manera atractiva",
+            en: "DnHub needed a digital presence that reflected their innovative approach to K-Beauty marketing. They wanted a site that:\n\n• Communicated their value proposition clearly and impactfully\n• Worked perfectly in both English and Korean for their international clients\n• Conveyed professionalism with a modern, memorable design\n• Showcased their services, team and success cases attractively",
+          },
+          images: [],
+        },
+        {
+          title: { es: "Mi proceso de diseño", en: "My design process" },
+          content: {
+            es: "Diseñé un sistema visual bold y distintivo:\n\n• Tipografía impactante — Uso de Anton y Archivo Black para headlines que capturan atención instantáneamente\n• Paleta vibrante — Colores acentos en amarillo, púrpura y naranja que destacan sobre fondos neutros\n• Estética \"sticker\" — Bordes sólidos de 2px y sombras offset que crean profundidad visual\n• Componentes modulares — Cada sección tiene su propio componente con estilos encapsulados\n\nPara el soporte bilingüe, implementé un sistema de internacionalización con Context API que permite cambiar de idioma instantáneamente, con fuentes coreanas (Black Han Sans, Noto Sans KR) que se aplican automáticamente.",
+            en: "I designed a bold and distinctive visual system:\n\n• Impactful typography — Using Anton and Archivo Black for headlines that capture attention instantly\n• Vibrant palette — Accent colors in yellow, purple and orange that stand out against neutral backgrounds\n• \"Sticker\" aesthetic — Solid 2px borders and offset shadows that create visual depth\n• Modular components — Each section has its own component with encapsulated styles\n\nFor bilingual support, I implemented an internationalization system with Context API that allows instant language switching, with Korean fonts (Black Han Sans, Noto Sans KR) that are applied automatically.",
+          },
+          images: [],
+        },
+        {
+          title: { es: "Arquitectura técnica", en: "Technical architecture" },
+          content: {
+            es: "Elegí una arquitectura simple pero robusta:\n\n• React 19 — Para componentes declarativos y manejo de estado eficiente\n• Vite — Build tool moderno con HMR ultra-rápido para desarrollo ágil\n• CSS puro con design tokens — Variables CSS centralizadas para colores, tipografía y espaciado, sin dependencias adicionales\n• Arquitectura por secciones — Cada parte de la landing (Hero, Services, Team, FAQ) es un componente independiente\n\nEsta combinación permite un sitio rápido, fácil de mantener y listo para deploy estático en cualquier CDN.",
+            en: "I chose a simple but robust architecture:\n\n• React 19 — For declarative components and efficient state management\n• Vite — Modern build tool with ultra-fast HMR for agile development\n• Pure CSS with design tokens — Centralized CSS variables for colors, typography and spacing, no additional dependencies\n• Section-based architecture — Each part of the landing (Hero, Services, Team, FAQ) is an independent component\n\nThis combination allows for a fast site, easy to maintain and ready for static deployment on any CDN.",
+          },
+          images: [],
+        },
+        {
+          title: { es: "Resultado e impacto", en: "Result & impact" },
+          content: {
+            es: "• Landing page completa con 8+ secciones: Hero, Statement, Stats, Services, Portfolio, Mascot, Team, FAQ y CTA\n• Experiencia bilingüe fluida con cambio de idioma instantáneo\n• Animaciones scroll-reveal que hacen la navegación más dinámica\n• Diseño 100% responsive que se ve impecable en cualquier dispositivo\n• Carga rápida gracias a la arquitectura ligera sin frameworks CSS pesados\n• Código limpio y organizado, listo para futuras expansiones",
+            en: "• Complete landing page with 8+ sections: Hero, Statement, Stats, Services, Portfolio, Mascot, Team, FAQ and CTA\n• Fluid bilingual experience with instant language switching\n• Scroll-reveal animations that make navigation more dynamic\n• 100% responsive design that looks impeccable on any device\n• Fast loading thanks to lightweight architecture without heavy CSS frameworks\n• Clean and organized code, ready for future expansions",
           },
           images: [],
         },

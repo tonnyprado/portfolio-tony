@@ -12,7 +12,7 @@ function About({ lang }) {
       <div className="container about-inner">
         <div>
           <h2 className="about-intro reveal d1">
-            {t(a.intro)[0]}<span className="hl">{t(a.intro)[1]}</span>{t(a.intro)[2]}
+            {t(a.intro)[0]}<span className="hl">{t(a.intro)[1]}</span>{t(a.intro)[2]}<span className="hl-black">{t(a.intro)[3]}</span>{t(a.intro)[4]}
           </h2>
         </div>
         <div className="about-right">
