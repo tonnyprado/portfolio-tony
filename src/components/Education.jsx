@@ -1,5 +1,6 @@
 import { PORT } from '../data';
 import tituloPhoto from '../assets/titulo.jpg';
+import diplomaIT from '../assets/diploma-it.jpeg';
 import awsBadge from '../assets/aws-badge.png';
 
 function Education({ lang }) {
@@ -31,6 +32,12 @@ function Education({ lang }) {
             </div>
             <p className="edu-photo-caption">
               {lang === 'es' ? 'Mi título profesional' : 'My professional degree'}
+            </p>
+            <div className="edu-photo-frame" style={{ marginTop: '24px' }}>
+              <img src={diplomaIT} alt="Diplomado en TI - Universidad de Colima" className="edu-photo" />
+            </div>
+            <p className="edu-photo-caption">
+              {lang === 'es' ? 'Diplomado en TI' : 'IT Diploma'}
             </p>
           </div>
         </div>
