@@ -11,6 +11,7 @@ import Statement from '../components/v2/Statement';
 import RecentWork from '../components/v2/RecentWork';
 import AboutSection from '../components/v2/AboutSection';
 import Services from '../components/Services';
+import HowIWork from '../components/v2/HowIWork';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { GetInTouchButton } from '../components/common/GetInTouchButton';
@@ -91,6 +92,7 @@ function TestPage() {
           <div id="services">
             <Services lang={lang} />
           </div>
+          <HowIWork lang={lang} />
         </main>
 
         <div className="v2-contact-sticky" ref={contactRef} id="contact">
