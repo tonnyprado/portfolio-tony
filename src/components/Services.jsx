@@ -11,12 +11,9 @@ function Services({ lang }) {
   };
 
   return (
-    <section className="section services" id="services">
+    <section className="section services splash-reveal" id="services">
       <div className="services-card">
         <div className="services-left">
-          <span className="services-label reveal d1">
-            {lang === 'es' ? 'MIS SERVICIOS' : 'MY SERVICES'}
-          </span>
           <h2 className="services-title reveal d2">
             <span className="line1">{t(s.title)[0]}</span><br />
             <span className="line2">{t(s.title)[1]}</span>

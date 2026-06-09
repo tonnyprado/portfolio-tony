@@ -1,0 +1,223 @@
+/* ----- V2 About Page ----- */
+.v2-about-page {
+  padding-top: 0;
+}
+
+/* About Page Hero Section */
+.about-hero-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 5vw, 80px);
+  background: var(--black);
+  z-index: 1;
+}
+
+/* About Main Content - scrolls over the fixed hero */
+.about-main-content {
+  position: relative;
+  z-index: 10;
+  margin-top: 100vh;
+  background: var(--bg);
+}
+
+.about-hero-text {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 6vw, 72px);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+}
+
+.about-hero-word {
+  display: inline-flex;
+}
+
+.about-hero-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px) rotateX(-90deg);
+  transition: none;
+}
+
+.about-hero-text.visible .about-hero-letter {
+  animation: heroLetterReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes heroLetterReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotateX(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* Scroll Down Hint */
+.about-scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.about-scroll-hint.visible {
+  opacity: 1;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.about-scroll-hint span {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.about-scroll-hint svg {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* Back circle button */
+.v2-back-circle {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s var(--ease);
+}
+
+.v2-back-circle:hover {
+  background: var(--accent);
+  color: var(--black);
+  transform: scale(1.05);
+}
+
+/* ----- V2 About Intro ----- */
+.v2-about-intro {
+  padding: clamp(60px, 10vw, 120px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* About Page Background Marquee */
+.about-marquee-bg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: aboutMarqueeScroll 30s linear infinite;
+}
+
+.about-marquee-text {
+  font-family: var(--font-display);
+  font-size: clamp(80px, 15vw, 180px);
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--line-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding-right: 40px;
+}
+
+@keyframes aboutMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.v2-about-intro .container {
+  position: relative;
+  z-index: 1;
+}
+
+.v2-about-tagline {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto clamp(60px, 8vw, 100px);
+}
+
+.v2-about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.v2-about-photo-wrap {
+  position: relative;
+}
+
+.v2-about-photo {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.v2-about-desc {
+  color: var(--ink-2);
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.7;
+}
+
+.v2-about-desc p {
+  margin-bottom: 1.5em;
+}
+

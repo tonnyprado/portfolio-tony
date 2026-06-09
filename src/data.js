@@ -475,7 +475,7 @@ export const PORT = {
       tech: ["React","React Flow","Spring Boot","PostgreSQL","JavaScript"],
       link: null,
       media: {
-        hero: null,
+        hero: "sigapi/sigapi-screenshot-1.png",
         video: "sigapi/sigapi-demo-2.mov",
         gallery: ["sigapi/sigapi-screenshot-1.png", "sigapi/sigapi-screenshot-2.jpg", "sigapi/sigapi-demo.mov"],
       },

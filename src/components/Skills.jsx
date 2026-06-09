@@ -4,7 +4,7 @@ function Skills({ lang }) {
   const s = PORT.ui.skills;
   const t = (o) => o[lang];
   return (
-    <section className="section alt skills" id="skills">
+    <section className="section alt skills splash-reveal" id="skills">
       <div className="container">
         <div className="section-head">
           <div>
