@@ -13,6 +13,9 @@ import Footer from '../components/Footer';
 import { BackButton } from '../components/common/BackButton';
 import { GetInTouchButton } from '../components/common/GetInTouchButton';
 
+// Assets
+import tonyPhoto from '../assets/IMG_0656.png';
+
 const INTRO_TEXT = {
   es: "Estoy aquí para ayudarte a construir tu próxima gran idea.",
   en: "I'm here to help you build your next big idea."
@@ -77,25 +80,34 @@ function AboutPage() {
       <BackButton onClick={handleBackClick} />
 
       <section className="about-hero-section" ref={heroRef}>
-        <h1 className={`about-hero-text ${heroVisible ? 'visible' : ''}`}>
-          {words.map((word, wordIndex) => (
-            <span key={wordIndex} className="about-hero-word">
-              {word.split('').map((letter, letterIndex) => {
-                const totalIndex = words.slice(0, wordIndex).join(' ').length + (wordIndex > 0 ? 1 : 0) + letterIndex;
-                return (
-                  <span
-                    key={letterIndex}
-                    className="about-hero-letter"
-                    style={{ animationDelay: `${totalIndex * 0.03}s` }}
-                  >
-                    {letter}
-                  </span>
-                );
-              })}
-              {wordIndex < words.length - 1 && <span>&nbsp;</span>}
-            </span>
-          ))}
-        </h1>
+        <div className="about-hero-content">
+          <div className={`about-hero-photo-wrap ${heroVisible ? 'visible' : ''}`}>
+            <img
+              src={tonyPhoto}
+              alt="Marco Antonio Prado Garcia"
+              className="about-hero-photo"
+            />
+          </div>
+          <h1 className={`about-hero-text ${heroVisible ? 'visible' : ''}`}>
+            {words.map((word, wordIndex) => (
+              <span key={wordIndex} className="about-hero-word">
+                {word.split('').map((letter, letterIndex) => {
+                  const totalIndex = words.slice(0, wordIndex).join(' ').length + (wordIndex > 0 ? 1 : 0) + letterIndex;
+                  return (
+                    <span
+                      key={letterIndex}
+                      className="about-hero-letter"
+                      style={{ animationDelay: `${totalIndex * 0.03}s` }}
+                    >
+                      {letter}
+                    </span>
+                  );
+                })}
+                {wordIndex < words.length - 1 && <span>&nbsp;</span>}
+              </span>
+            ))}
+          </h1>
+        </div>
 
         <div className={`about-scroll-hint ${showScrollHint ? 'visible' : ''}`}>
           <span>{t({ es: 'Scroll', en: 'Scroll down' })}</span>

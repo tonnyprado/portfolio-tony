@@ -92,7 +92,7 @@
   .v2-hero-header { margin-bottom: 30px; }
   .v2-hero-content-center { gap: 30px; }
   .v2-hero-sticker { font-size: 12px !important; padding: 10px 16px !important; min-height: 44px; display: flex; align-items: center; justify-content: center; }
-  .v2-hero-sticker:nth-child(6) { right: -15% !important; }
+  .v2-hero-sticker:nth-child(6) { right: -20% !important; }
   .v2-hero-photo { max-height: 35vh; }
   .v2-hero-name { font-size: clamp(40px, 12vw, 64px); }
   .v2-hero-role { font-size: clamp(24px, 7vw, 40px); }
