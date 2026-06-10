@@ -1,4 +1,4 @@
-import tonyVideo from '../../assets/videome_compressed.mp4';
+import tonyVideo from '../../assets/videome_final.mp4';
 
 const CONTENT = {
   description: {
@@ -32,7 +32,6 @@ function AboutIntro({ lang }) {
           muted
           playsInline
         >
-          <source src={tonyVideo} type="video/quicktime" />
           <source src={tonyVideo} type="video/mp4" />
         </video>
       </div>
