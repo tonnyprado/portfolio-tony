@@ -452,16 +452,34 @@
 /* Responsive */
 @media (max-width: 768px) {
   .skills-cards-container {
-    min-height: 400px;
+    min-height: auto;
+    padding: 20px 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .skills-cards-container::-webkit-scrollbar {
+    display: none;
   }
 
   .skills-cards-stack {
-    height: 320px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: auto;
+    width: max-content;
+    padding: 20px 24px;
   }
 
   .skills-card {
-    width: clamp(120px, 35vw, 160px);
-    height: clamp(160px, 45vw, 200px);
+    position: relative !important;
+    transform: none !important;
+    width: 140px;
+    height: 180px;
+    flex-shrink: 0;
   }
 
   .skills-card-content {
@@ -469,32 +487,278 @@
   }
 
   .skills-card-name {
-    font-size: clamp(12px, 3.5vw, 16px);
+    font-size: 14px;
   }
 
   .skills-card-sticker {
-    width: 85px;
-    height: 65px;
+    width: 70px;
+    height: 55px;
   }
 
   .skills-card-sticker img {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
   }
 
   .skills-card-sticker .sticker-label {
-    font-size: 7px;
-    max-width: 70px;
+    font-size: 6px;
+    max-width: 60px;
   }
 
   .skills-card-sticker::before {
-    width: 16px;
-    height: 8px;
-    top: 7px;
-    left: 12px;
+    width: 14px;
+    height: 6px;
+    top: 6px;
+    left: 10px;
   }
 
   .skills-languages-title {
     font-size: clamp(48px, 12vw, 80px);
+  }
+
+  .skills-hint {
+    text-align: center;
+    padding: 0 20px;
+  }
+}
+
+/* =============================================
+   SERVICES CARDS SECTION
+   ============================================= */
+
+.services-cards-section {
+  position: relative;
+  isolation: isolate;
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-cards-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: #d4e4ed;
+  background-image:
+    linear-gradient(90deg, #E07A5F 1px, transparent 1px),
+    linear-gradient(180deg, #E07A5F 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.services-cards-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-cards-section .services-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.services-cards-section .services-title .line1 {
+  color: var(--ink);
+}
+
+.services-cards-section .services-title .line2 {
+  background: var(--accent);
+  color: var(--ink);
+  padding: 0 0.15em;
+  display: inline-block;
+}
+
+/* Cards Container */
+.services-cards-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 550px;
+  width: 100%;
+  padding: 60px 20px;
+}
+
+.services-cards-stack {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 480px;
+}
+
+/* Individual Card */
+.service-card {
+  position: absolute;
+  width: clamp(200px, 22vw, 280px);
+  height: clamp(320px, 38vw, 420px);
+  background: var(--card-bg);
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.service-card:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Sticker on card */
+.service-card-sticker {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(145deg, #fff 0%, #f5f5f5 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9);
+  border: 3px solid #fff;
+  z-index: 10;
+}
+
+.service-card-sticker img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Card Content */
+.service-card-content {
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--card-text);
+  text-transform: lowercase;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.service-card-divider {
+  width: 100%;
+  height: 2px;
+  background: var(--card-text);
+  opacity: 0.3;
+  margin-bottom: 16px;
+}
+
+.service-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-card-list li {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.8vw, 18px);
+  color: var(--card-text);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+.service-card-list .bullet {
+  font-size: 10px;
+  opacity: 0.7;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Services Cards Responsive */
+@media (max-width: 900px) {
+  .services-cards-container {
+    min-height: auto;
+    padding: 20px 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .services-cards-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .services-cards-stack {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: auto;
+    width: max-content;
+    padding: 30px 24px;
+  }
+
+  .service-card {
+    position: relative !important;
+    transform: none !important;
+    width: 160px;
+    height: 220px;
+    flex-shrink: 0;
+  }
+
+  .service-card-sticker {
+    width: 50px;
+    height: 50px;
+    top: -20px !important;
+    left: 50% !important;
+    right: auto !important;
+    margin-left: -25px;
+  }
+
+  .service-card-sticker img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .service-card-content {
+    padding: 20px 16px;
+  }
+
+  .service-card-title {
+    font-size: 16px;
+  }
+
+  .service-card-list li {
+    font-size: 11px;
+  }
+
+  .services-cards-header {
+    margin-bottom: 40px;
+  }
+
+  .services-cards-title {
+    font-size: clamp(28px, 8vw, 40px);
   }
 }

@@ -89,9 +89,7 @@ function TestPage() {
           <Statement lang={lang} />
           <RecentWork lang={lang} />
           <AboutSection lang={lang} />
-          <div id="services">
-            <Services lang={lang} />
-          </div>
+          <Services lang={lang} />
           <HowIWork lang={lang} />
         </main>
 
