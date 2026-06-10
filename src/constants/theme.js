@@ -4,21 +4,25 @@
  */
 export const COLORS = {
   navy: {
-    900: '#00102A',
-    800: '#001634',
-    700: '#001D44',
-    600: '#0A2A55',
-    tint: '#5B6E8C'
+    900: '#243040',
+    800: '#1e2a38',
+    700: '#2d3c4c',
+    600: '#3a4d5e',
+    tint: '#91BDD9'
   },
-  accent: '#E8B400',
-  accentDeep: '#C2920A',
-  bg: '#F4F1E9',
-  bg2: '#ECE8DD',
+  accent: '#E07A5F',
+  accentDeep: '#C95D4F',
+  mauve: '#BFA8A3',
+  mauveDeep: '#A68380',
+  blueLight: '#B6DBF2',
+  blueMid: '#91BDD9',
+  bg: '#F5F9FC',
+  bg2: '#E8F1F7',
   surface: '#FFFFFF',
-  ink: '#15140F',
-  ink2: '#56524A',
-  ink3: '#8C887D',
-  black: '#141310'
+  ink: '#243040',
+  ink2: '#4a5a6a',
+  ink3: '#7a8a9a',
+  black: '#1a2430'
 };
 
 export const FONTS = {

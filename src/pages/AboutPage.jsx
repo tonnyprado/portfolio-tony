@@ -7,7 +7,7 @@ import { useScrollToTop } from '../hooks/useScrollToTop';
 // Components
 import AboutIntro from '../components/v2/AboutIntro';
 import Experience from '../components/Experience';
-import Skills from '../components/Skills';
+import SkillsCarousel from '../components/v2/SkillsCarousel';
 import Education from '../components/Education';
 import Footer from '../components/Footer';
 import { BackButton } from '../components/common/BackButton';
@@ -120,7 +120,7 @@ function AboutPage() {
       <main className="about-main-content">
         <AboutIntro lang={lang} />
         <Experience lang={lang} />
-        <Skills lang={lang} />
+        <SkillsCarousel lang={lang} />
         <Education lang={lang} />
         <Footer lang={lang} />
       </main>

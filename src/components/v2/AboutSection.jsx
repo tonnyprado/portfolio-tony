@@ -13,7 +13,7 @@ function AboutSection({ lang }) {
   const t = (o) => o[lang];
 
   return (
-    <section className="v2-about-section splash-reveal" id="about">
+    <section className="v2-about-section reveal" id="about">
       <div className="container">
         <div className="v2-about-grid">
           <div className="v2-about-photo-col">
@@ -42,7 +42,7 @@ function AboutSection({ lang }) {
         <div className="v2-about-btn-wrap">
           <button
             className="btn btn-about-me"
-            onClick={() => startTransition('/about', lang === 'es' ? 'SOBRE MÍ' : 'ABOUT', '#6DB33F')}
+            onClick={() => startTransition('/about', lang === 'es' ? 'SOBRE MÍ' : 'ABOUT', '#BFA8A3')}
           >
             {t(LABELS.moreAbout)}
           </button>

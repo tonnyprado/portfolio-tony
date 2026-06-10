@@ -79,7 +79,7 @@ function RecentWork({ lang }) {
         <div className="v2-rw-more reveal">
           <button
             className="btn btn-dark"
-            onClick={() => startTransition('/portfolio', lang === 'es' ? 'PROYECTOS' : 'PORTFOLIO', '#61DAFB')}
+            onClick={() => startTransition('/portfolio', lang === 'es' ? 'TRABAJO' : 'WORK', '#91BDD9')}
           >
             {t(LABELS.moreWork)}
           </button>

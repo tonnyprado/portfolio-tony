@@ -13,10 +13,10 @@ function TestHero({ lang, setLang, onNavigate }) {
   }, []);
 
   const navStickers = [
-    { text: lang === 'es' ? 'PROYECTOS' : 'PROJECTS', route: '/portfolio', displayName: lang === 'es' ? 'PROYECTOS' : 'PORTFOLIO', color: '#61DAFB', rotate: -8, top: '10%', left: '-5%' },
-    { text: lang === 'es' ? 'SOBRE MÍ' : 'ABOUT', route: '/about', displayName: lang === 'es' ? 'SOBRE MÍ' : 'ABOUT', color: '#6DB33F', rotate: 6, top: '45%', left: '-10%' },
-    { text: lang === 'es' ? 'CONTÁCTAME' : 'CONTACT ME', route: '#contact', displayName: lang === 'es' ? 'CONTACTO' : 'CONTACT', color: '#FF6B6B', rotate: -5, top: '80%', left: '0%' },
-    { text: lang === 'es' ? 'SERVICIOS' : 'SERVICES', route: '#services', displayName: lang === 'es' ? 'SERVICIOS' : 'SERVICES', color: '#A78BFA', rotate: 8, top: '25%', right: '-8%' },
+    { text: lang === 'es' ? 'TRABAJO' : 'WORK', route: '/portfolio', displayName: lang === 'es' ? 'TRABAJO' : 'WORK', color: '#91BDD9', rotate: -8, top: '10%', left: '5%' },
+    { text: lang === 'es' ? 'SOBRE MÍ' : 'ABOUT', route: '/about', displayName: lang === 'es' ? 'SOBRE MÍ' : 'ABOUT', color: '#BFA8A3', rotate: 6, top: '45%', left: '-10%' },
+    { text: lang === 'es' ? 'CONTÁCTAME' : 'CONTACT ME', route: '#contact', displayName: lang === 'es' ? 'CONTACTO' : 'CONTACT', color: '#E07A5F', rotate: -5, top: '80%', left: '0%' },
+    { text: lang === 'es' ? 'SERVICIOS' : 'SERVICES', route: '#services', displayName: lang === 'es' ? 'SERVICIOS' : 'SERVICES', color: '#A68380', rotate: 8, top: '25%', right: '-8%' },
   ];
 
   const handleStickerClick = (e, sticker) => {

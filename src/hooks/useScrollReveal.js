@@ -6,7 +6,7 @@ import { useEffect } from 'react';
  */
 export function useScrollReveal(options = {}) {
   const {
-    selector = '.reveal, .splash-reveal',
+    selector = '.reveal, .splash-reveal, .reveal-slide',
     threshold = 0.15,
     rootMargin = '0px 0px -10% 0px',
     activeClass = 'in',

@@ -96,7 +96,7 @@ function ProjectPage() {
           <div className="project-marquee-track">
             {[...Array(10)].map((_, i) => (
               <span key={i} className="project-marquee-item">
-                {project.name} <span className="marquee-dot">—</span> {project.tech.slice(0, 3).join(' · ')} <span className="marquee-dot">—</span>
+                {project.name}
               </span>
             ))}
           </div>

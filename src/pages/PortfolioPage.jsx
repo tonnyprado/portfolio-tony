@@ -8,9 +8,10 @@ import { getAsset } from '../utils/assets';
 // Components
 import { BackButton } from '../components/common/BackButton';
 import { GetInTouchButton } from '../components/common/GetInTouchButton';
+import Footer from '../components/Footer';
 
 const LABELS = {
-  title: { es: 'Proyectos', en: 'Projects' },
+  title: { es: 'Trabajo', en: 'Work' },
   description: {
     es: 'Plataformas reales que diseñé y construí de principio a fin. Haz clic en cualquiera para ver el caso de estudio completo.',
     en: 'Real platforms I designed and built end-to-end. Click any to open the full case study.'
@@ -135,6 +136,8 @@ function PortfolioPage() {
           </div>
         )}
       </main>
+
+      <Footer lang={lang} />
     </div>
   );
 }

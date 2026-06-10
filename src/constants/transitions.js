@@ -28,6 +28,6 @@ export const TRANSITION_TYPES = {
   SVG_DRAW: 'svg-draw'
 };
 
-export const DEFAULT_TRANSITION_COLOR = '#000';
-export const SLIDE_TRANSITION_COLOR = '#0a0a0a';
-export const SVG_DRAW_COLOR = '#FFD700';
+export const DEFAULT_TRANSITION_COLOR = '#1a2430';
+export const SLIDE_TRANSITION_COLOR = '#1a2430';
+export const SVG_DRAW_COLOR = '#E07A5F';

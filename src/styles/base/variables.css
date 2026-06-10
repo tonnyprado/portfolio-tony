@@ -1,42 +1,50 @@
 /* ============================================================
    Marco "Tony" Prado — Portfolio
-   Clean sans · navy + gold + cream · smooth motion
+   Clean sans · navy + coral + soft blue · smooth motion
    ============================================================ */
 
 :root {
-  /* Base oscura — marino (muestreados de la cortina) */
-  --navy-900: #00102A;
-  --navy-800: #001634;
-  --navy-700: #001D44;
-  --navy-600: #0A2A55;
-  --navy-tint: #5B6E8C;
+  /* Base oscura — navy (nueva paleta) */
+  --navy-900: #243040;
+  --navy-800: #1e2a38;
+  --navy-700: #2d3c4c;
+  --navy-600: #3a4d5e;
+  --navy-tint: #91BDD9;
 
-  /* Acentos — dorado */
-  --accent: #E8B400;
-  --accent-deep: #C2920A;
+  /* Acentos — coral/terracota */
+  --accent: #E07A5F;
+  --accent-deep: #C95D4F;
 
-  /* Claros — crema */
-  --bg: #F4F1E9;
-  --bg-2: #ECE8DD;
+  /* Secundarios — mauve */
+  --mauve: #BFA8A3;
+  --mauve-deep: #A68380;
+
+  /* Claros — azul suave */
+  --bg: #F5F9FC;
+  --bg-2: #E8F1F7;
   --surface: #FFFFFF;
 
-  /* Textos sobre marino */
-  --on-navy: #F4F1E9;
-  --on-navy-2: #AEB9CC;
-  --on-navy-3: #6F7E96;
+  /* Azules de la paleta */
+  --blue-light: #B6DBF2;
+  --blue-mid: #91BDD9;
+
+  /* Textos sobre navy */
+  --on-navy: #F5F9FC;
+  --on-navy-2: #B6DBF2;
+  --on-navy-3: #91BDD9;
 
   /* Textos sobre claro */
-  --ink: #15140F;
-  --ink-2: #56524A;
-  --ink-3: #8C887D;
+  --ink: #243040;
+  --ink-2: #4a5a6a;
+  --ink-3: #7a8a9a;
 
   /* Líneas */
-  --line: rgba(21, 20, 15, 0.12);
-  --line-strong: rgba(21, 20, 15, 0.24);
+  --line: rgba(36, 48, 64, 0.12);
+  --line-strong: rgba(36, 48, 64, 0.24);
   --line-light: rgba(255, 255, 255, 0.14);
 
   /* Negro */
-  --black: #141310;
+  --black: #1a2430;
 
   --font-display: "Space Grotesk", "Hanken Grotesk", sans-serif;
   --font-body: "Hanken Grotesk", system-ui, sans-serif;

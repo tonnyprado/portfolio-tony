@@ -17,8 +17,8 @@ export const NAV_SECTIONS = {
  * Navigation items with their routes and transition colors
  */
 export const NAV_CONFIG = [
-  { key: 'about', route: '/about', color: '#00102A' },
-  { key: 'services', route: '#services', color: '#0A2A55' },
-  { key: 'projects', route: '/portfolio', color: '#001D44' },
-  { key: 'contact', route: '#contact', color: '#E8B400' }
+  { key: 'about', route: '/about', color: '#BFA8A3' },
+  { key: 'services', route: '#services', color: '#A68380' },
+  { key: 'projects', route: '/portfolio', color: '#91BDD9' },
+  { key: 'contact', route: '#contact', color: '#E07A5F' }
 ];

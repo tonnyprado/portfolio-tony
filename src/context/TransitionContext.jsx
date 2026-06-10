@@ -49,7 +49,7 @@ export function TransitionProvider({ children }) {
   // Slide transition (for project navigation)
   const startSlideTransition = useCallback((route, direction = 'right') => {
     pendingRouteRef.current = route;
-    setTransition({ active: true, name: '', color: '#0a0a0a', type: 'slide', direction });
+    setTransition({ active: true, name: '', color: '#1a2430', type: 'slide', direction });
     setPhase('entering');
 
     setTimeout(() => {
@@ -71,7 +71,7 @@ export function TransitionProvider({ children }) {
   // SVG Draw transition (for back to home) - marker scribble
   const startSvgDrawTransition = useCallback((route, scrollTarget = null) => {
     pendingRouteRef.current = route;
-    setTransition({ active: true, name: '', color: '#FFD700', type: 'svg-draw', direction: 'right' });
+    setTransition({ active: true, name: '', color: '#E07A5F', type: 'svg-draw', direction: 'right' });
     setPhase('entering');
 
     // Timeline:

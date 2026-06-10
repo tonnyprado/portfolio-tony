@@ -57,6 +57,18 @@
 @keyframes splashZoom { 0% { opacity: 0; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1); } }
 @keyframes splashPop { 0% { opacity: 0; transform: rotate(var(--rotate)) scale(0); } 70% { transform: rotate(var(--rotate)) scale(1.15); } 100% { opacity: 1; transform: rotate(var(--rotate)) scale(1); } }
 
+/* ----- Slide Reveal Animation ----- */
+.reveal-slide {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-slide.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* ----- V2 Language Toggle ----- */
 .v2-lang-toggle { position: fixed; top: 24px; right: 24px; z-index: 100; display: flex; gap: 8px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 6px; border-radius: 100px; }
 .v2-lang-toggle button { font-family: var(--font-mono); font-size: 12px; padding: 8px 14px; border-radius: 100px; color: var(--ink-2); transition: all 0.3s var(--ease); }

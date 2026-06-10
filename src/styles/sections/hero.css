@@ -67,8 +67,8 @@
 /* Buttons */
 .btn-ghost-light { border: 1.5px solid rgba(255, 255, 255, 0.3); color: var(--ink); padding: 13.5px 24px; }
 .btn-ghost-light:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.5); }
-.btn-about-me { background: #4A2C2A; color: #fff; padding: 18px 40px; border-radius: 100px; font-size: 18px; font-weight: 600; }
-.btn-about-me:hover { background: #5D3836; box-shadow: 0 10px 30px -8px rgba(74, 44, 42, 0.5); }
+.btn-about-me { background: var(--accent); color: var(--black); padding: 18px 40px; border-radius: 100px; font-size: 18px; font-weight: 600; }
+.btn-about-me:hover { background: var(--accent-deep); box-shadow: 0 10px 30px -8px rgba(224, 122, 95, 0.5); }
 
 /* Hero responsive */
 @media (max-width: 900px) {
