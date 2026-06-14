@@ -11,12 +11,12 @@ function Contact({ lang }) {
     <section className="section contact" id="contact">
       <div className="container contact-grid">
         <div>
-          <h2 className="reveal d1">
+          <h2 className="reveal">
             {t(c.title)[0]}<span className="y">{t(c.title)[1]}</span>{t(c.title)[2]}
           </h2>
-          <p className="lead reveal d2">{t(c.lead)}</p>
+          <p className="lead reveal">{t(c.lead)}</p>
         </div>
-        <div className="contact-list reveal d2">
+        <div className="contact-list reveal">
           <a className="contact-link" href={`mailto:${info.email}`}>
             <span className="v"><span className="k">Email</span>{info.email}</span><Arrow />
           </a>

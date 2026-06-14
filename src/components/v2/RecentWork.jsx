@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PORT } from '../../data';
 import { useTransition } from '../../context/TransitionContext';
@@ -13,35 +12,41 @@ import belleHero from '../../assets/daniweb/belle-pielle-hero.png';
 import belleDani1 from '../../assets/daniweb/dani1.png';
 import belleDani2 from '../../assets/daniweb/dani2.png';
 
+// Import project videos
+import mendiolaVideo from '../../assets/mendiola-platform/mendiola-demo.mp4';
+import belleVideo from '../../assets/daniweb/belle-demo-1.mp4';
+
 const FEATURED_PROJECTS = ['marnee', 'mendiola', 'belle'];
 
-const PROJECT_IMAGES = {
-  marnee: [marneeHero, marneeLogin],
-  mendiola: [mendiolaHero, mendiolaDashboard, mendiolaShipments],
-  belle: [belleHero, belleDani1, belleDani2],
+const PROJECT_MEDIA = {
+  marnee: {
+    video: null,
+    hero: marneeHero,
+    thumbnails: [marneeHero, marneeLogin],
+  },
+  mendiola: {
+    video: mendiolaVideo,
+    hero: mendiolaHero,
+    thumbnails: [mendiolaDashboard, mendiolaShipments],
+  },
+  belle: {
+    video: belleVideo,
+    hero: belleHero,
+    thumbnails: [belleDani1, belleDani2],
+  },
 };
 
 const LABELS = {
   title: { es: 'Trabajo reciente', en: 'Recent Work' },
   moreWork: { es: 'Más proyectos', en: 'More work here' },
+  showMore: { es: 'Ver más', en: 'Show more' },
 };
 
 function RecentWork({ lang }) {
   const { startTransition } = useTransition();
-  const [hoveredProject, setHoveredProject] = useState(null);
-  const [imageIndex, setImageIndex] = useState(0);
   const t = (o) => o[lang];
 
   const projects = PORT.projectList.filter(p => FEATURED_PROJECTS.includes(p.id));
-
-  const handleMouseMove = (e, projectId) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const progress = x / rect.width;
-    const images = PROJECT_IMAGES[projectId];
-    const newIndex = Math.min(Math.floor(progress * images.length), images.length - 1);
-    setImageIndex(newIndex);
-  };
 
   return (
     <section className="v2-recent-work splash-reveal" id="work">
@@ -49,31 +54,64 @@ function RecentWork({ lang }) {
         <h2 className="v2-rw-title reveal">{t(LABELS.title)}</h2>
 
         <div className="v2-rw-list">
-          {projects.map((project) => (
-            <Link
-              to={`/project/${project.id}`}
-              key={project.id}
-              className="v2-rw-item reveal"
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => { setHoveredProject(null); setImageIndex(0); }}
-              onMouseMove={(e) => handleMouseMove(e, project.id)}
-            >
-              <div className="v2-rw-item-content">
-                <h3 className="v2-rw-item-name">{project.name}</h3>
-                <span className="v2-rw-item-role">{t(project.roleTag)}</span>
-              </div>
+          {projects.map((project, idx) => {
+            const media = PROJECT_MEDIA[project.id];
+            const isEven = idx % 2 === 1;
 
-              {hoveredProject === project.id && (
-                <div className="v2-rw-preview">
-                  <img
-                    src={PROJECT_IMAGES[project.id][imageIndex]}
-                    alt={project.name}
-                  />
+            return (
+              <Link
+                to={`/project/${project.id}`}
+                key={project.id}
+                className={`v2-rw-item reveal ${isEven ? 'reverse' : ''}`}
+              >
+                {/* Left - Media */}
+                <div className="v2-rw-media">
+                  <div className="v2-rw-media-main">
+                    {media.video ? (
+                      <video src={media.video} muted loop playsInline autoPlay />
+                    ) : (
+                      <img src={media.hero} alt={project.name} />
+                    )}
+                  </div>
+
+                  <div className="v2-rw-thumbs">
+                    {media.thumbnails.map((thumb, idx) => (
+                      <div key={idx} className="v2-rw-thumb">
+                        <img src={thumb} alt="" />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              )}
 
-            </Link>
-          ))}
+                {/* Right - Info */}
+                <div className="v2-rw-info">
+                  <span className="v2-rw-date">{t(project.period).toUpperCase()}</span>
+
+                  <h3 className="v2-rw-name">{project.name}</h3>
+
+                  <p className="v2-rw-tagline">{t(project.tagline)}</p>
+
+                  <div className="v2-rw-bottom">
+                    <div className="v2-rw-thumbs-mobile">
+                      {media.thumbnails.map((thumb, idx) => (
+                        <div key={idx} className="v2-rw-thumb-mobile">
+                          <img src={thumb} alt="" />
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="v2-rw-arrow">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M7 7l10 10M17 7v10H7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="v2-rw-line" />
+              </Link>
+            );
+          })}
         </div>
 
         <div className="v2-rw-more reveal">

@@ -26,3 +26,12 @@ dist-ssr
 # Screenshots
 Screenshot*.png
 **/Screenshot*.png
+
+# Large media files
+*.af
+*.af~lock~
+*.mov
+src/assets/me.af
+src/assets/me2.af
+src/assets/meee.af
+src/assets/mendiola-platform/analitycs.mov

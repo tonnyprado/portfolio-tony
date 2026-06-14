@@ -8,7 +8,7 @@ function Footer({ lang }) {
   return (
     <footer className="footer">
       <div className="container footer-inner">
-        <span className="logo">Tony<span className="dot">.</span></span>
+        <span className="logo">Marco<span className="dot">.</span></span>
         <div className="footer-socials">
           <a href={info.linkedinUrl} target="_blank" rel="noopener noreferrer">LINKEDIN</a>
           <a href={`mailto:${info.email}`}>EMAIL</a>

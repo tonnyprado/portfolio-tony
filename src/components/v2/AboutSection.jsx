@@ -13,20 +13,20 @@ function AboutSection({ lang }) {
   const t = (o) => o[lang];
 
   return (
-    <section className="v2-about-section reveal" id="about">
+    <section className="v2-about-section" id="about">
       <div className="container">
         <div className="v2-about-grid">
-          <div className="v2-about-photo-col">
+          <div className="v2-about-photo-col reveal">
             <div className="v2-about-oval">
               <img src={tonyPhoto} alt="Marco Antonio Prado García" />
             </div>
           </div>
 
           <div className="v2-about-text-col">
-            <p className="v2-about-description">
+            <p className="v2-about-description reveal">
               {t(h.desc)}
             </p>
-            <ul className="v2-about-checks">
+            <ul className="v2-about-checks reveal">
               {t(h.checks).map((check, i) => (
                 <li key={i}>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
@@ -39,7 +39,7 @@ function AboutSection({ lang }) {
           </div>
         </div>
 
-        <div className="v2-about-btn-wrap">
+        <div className="v2-about-btn-wrap reveal">
           <button
             className="btn btn-about-me"
             onClick={() => startTransition('/about', lang === 'es' ? 'SOBRE MÍ' : 'ABOUT', '#BFA8A3')}

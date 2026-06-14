@@ -146,6 +146,13 @@ function ProjectPage() {
                 ))}
               </div>
             )}
+            {section.videos?.length > 0 && (
+              <div className="project-case-videos">
+                {section.videos.map((vid, j) => (
+                  <video key={j} src={getAsset(vid)} autoPlay muted loop playsInline />
+                ))}
+              </div>
+            )}
           </section>
         ))}
 

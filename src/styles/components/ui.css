@@ -2,11 +2,10 @@
 .v2-page { background: var(--bg); min-height: 100vh; }
 
 /* ----- Get in Touch Floating Button ----- */
-.v2-get-in-touch { position: fixed; top: 28px; right: 32px; z-index: 1000; padding: 14px 28px; font-family: var(--font-display); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--black); background: var(--accent); border: none; border-radius: 50px; cursor: pointer; transform: scale(0) translateY(-20px); opacity: 0; transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease, box-shadow 0.3s ease; pointer-events: none; }
-.v2-get-in-touch.visible { transform: scale(1) translateY(0); opacity: 1; pointer-events: auto; animation: liquidPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
-.v2-get-in-touch:hover { box-shadow: 0 0 30px rgba(255, 215, 0, 0.5), 0 0 60px rgba(255, 215, 0, 0.3); transform: scale(1.05); }
+.v2-get-in-touch { position: fixed; top: 28px; right: 32px; z-index: 1000; padding: 14px 28px; font-family: var(--font-display); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); background: transparent; border: 2px solid var(--accent); border-radius: 0; cursor: pointer; transform: scale(0) translateY(-20px); opacity: 0; transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease, background 0.3s ease, color 0.3s ease; pointer-events: none; }
+.v2-get-in-touch.visible { transform: scale(1) translateY(0); opacity: 1; pointer-events: auto; }
+.v2-get-in-touch:hover { background: var(--accent); color: var(--black); }
 .v2-get-in-touch:active { transform: scale(0.95); }
-@keyframes liquidPop { 0% { transform: scale(0) translateY(-20px); border-radius: 50%; } 50% { transform: scale(1.15) translateY(0); border-radius: 60px 40px 50px 45px; } 70% { transform: scale(0.95); border-radius: 45px 55px 40px 50px; } 100% { transform: scale(1); border-radius: 50px; } }
 
 @media (max-width: 768px) {
   .v2-get-in-touch { top: auto; bottom: 24px; right: 24px; padding: 12px 24px; font-size: 13px; }
@@ -69,8 +68,84 @@
   transform: translateX(0);
 }
 
+/* ----- General Reveal Animations ----- */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reveal with staggered children */
+.reveal.in .reveal-child {
+  opacity: 0;
+  animation: revealUp 0.6s ease forwards;
+}
+
+.reveal.in .reveal-child:nth-child(1) { animation-delay: 0.1s; }
+.reveal.in .reveal-child:nth-child(2) { animation-delay: 0.2s; }
+.reveal.in .reveal-child:nth-child(3) { animation-delay: 0.3s; }
+.reveal.in .reveal-child:nth-child(4) { animation-delay: 0.4s; }
+.reveal.in .reveal-child:nth-child(5) { animation-delay: 0.5s; }
+.reveal.in .reveal-child:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes revealUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Reveal from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Reveal from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-right.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Reveal scale */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-scale.in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes revealZoom {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes revealSlideRight {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
 /* ----- V2 Language Toggle ----- */
-.v2-lang-toggle { position: fixed; top: 24px; right: 24px; z-index: 100; display: flex; gap: 8px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 6px; border-radius: 100px; }
-.v2-lang-toggle button { font-family: var(--font-mono); font-size: 12px; padding: 8px 14px; border-radius: 100px; color: var(--ink-2); transition: all 0.3s var(--ease); }
+.v2-lang-toggle { position: fixed; top: 24px; right: 24px; z-index: 100; display: flex; gap: 0; border: 1px solid var(--line-strong); border-radius: 0; overflow: hidden; }
+.v2-lang-toggle button { font-family: var(--font-mono); font-size: 12px; padding: 8px 14px; border-radius: 0; color: var(--ink-2); transition: all 0.3s var(--ease); }
 .v2-lang-toggle button.active { background: var(--accent); color: var(--ink); }
 .v2-lang-toggle button:hover:not(.active) { color: var(--ink); }

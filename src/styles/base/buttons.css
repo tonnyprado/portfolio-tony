@@ -1,14 +1,141 @@
-/* BUTTONS */
-.btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-body); font-weight: 600; font-size: 15px; padding: 15px 26px; border-radius: 100px; transition: transform .4s var(--ease), background .3s, color .3s, box-shadow .3s; white-space: nowrap; }
-.btn:hover { transform: translateY(-2px); }
-.btn-dark { background: var(--black); color: #fff; }
-.btn-dark:hover { box-shadow: 0 14px 34px -12px rgba(0,0,0,.5); }
-.btn-yellow { background: var(--accent); color: var(--ink); }
-.btn-yellow:hover { background: var(--accent-deep); }
-.btn-ghost { border: 1.5px solid var(--ink); color: var(--ink); padding: 13.5px 24px; }
-.btn-ghost:hover { background: var(--ink); color: #fff; }
-.btn .arr { transition: transform .4s var(--ease); }
-.btn:hover .arr { transform: translateX(4px); }
+/* BUTTONS - BRUTALIST STYLE */
+
+/* Base button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 16px 28px;
+  border-radius: 0;
+  background: transparent;
+  border: 3px solid currentColor;
+  box-shadow: 4px 4px 0 currentColor;
+  transition: all .15s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 currentColor;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 currentColor;
+}
+
+/* Square buttons - Ghost/Outline style */
+.btn-dark {
+  color: var(--ink);
+  border-color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn-dark:hover {
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.btn-light {
+  color: #fff;
+  border-color: #fff;
+  box-shadow: 4px 4px 0 rgba(255,255,255,0.5);
+}
+.btn-light:hover {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 6px 6px 0 rgba(255,255,255,0.5);
+}
+
+.btn-ghost {
+  color: var(--ink);
+  border-color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn-ghost:hover {
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+/* Rounded buttons - Primary CTA style */
+.btn-accent {
+  color: #1a1a1a;
+  border-color: var(--accent);
+  background: var(--accent);
+  border-radius: 50px;
+  box-shadow: 4px 4px 0 #1a1a1a;
+  animation: btnPulse 3s ease-in-out infinite;
+}
+.btn-accent:hover {
+  transform: translate(-3px, -3px) scale(1.02);
+  box-shadow: 7px 7px 0 #1a1a1a;
+  animation: none;
+}
+.btn-accent:active {
+  transform: translate(2px, 2px) scale(0.98);
+  box-shadow: 2px 2px 0 #1a1a1a;
+}
+
+.btn-yellow {
+  color: #1a1a1a;
+  border-color: var(--accent);
+  background: var(--accent);
+  border-radius: 50px;
+  box-shadow: 4px 4px 0 #1a1a1a;
+  animation: btnPulse 3s ease-in-out infinite;
+}
+.btn-yellow:hover {
+  transform: translate(-3px, -3px) scale(1.02);
+  box-shadow: 7px 7px 0 #1a1a1a;
+  animation: none;
+}
+.btn-yellow:active {
+  transform: translate(2px, 2px) scale(0.98);
+  box-shadow: 2px 2px 0 #1a1a1a;
+}
+
+/* Button animations */
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 4px 4px 0 #1a1a1a; }
+  50% { box-shadow: 5px 5px 0 #1a1a1a, 0 0 20px rgba(224, 122, 95, 0.3); }
+}
+
+.btn .arr {
+  transition: transform .3s var(--ease);
+}
+.btn:hover .arr {
+  transform: translateX(6px);
+  animation: arrBounce 0.6s ease infinite;
+}
+
+@keyframes arrBounce {
+  0%, 100% { transform: translateX(6px); }
+  50% { transform: translateX(10px); }
+}
 
 /* SERVICES */
 .services { background: var(--navy-900); padding: clamp(80px,12vh,140px) 0; }
@@ -32,7 +159,7 @@
 .service-item.open .service-content { max-height: 300px; padding-bottom: 22px; }
 .service-content p { font-size: 15px; color: var(--ink-2); line-height: 1.6; margin-bottom: 14px; max-width: 50ch; }
 .service-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.service-tags .tag { font-family: var(--font-mono); font-size: 11px; background: var(--bg-2); color: var(--ink-2); padding: 5px 10px; border-radius: 100px; }
+.service-tags .tag { font-family: var(--font-mono); font-size: 11px; background: transparent; color: var(--ink-2); padding: 5px 10px; border: 1px solid var(--line); border-radius: 0; }
 
 /* SKILLS */
 .skills { padding: clamp(70px,10vh,120px) 0; background: var(--bg-2); }
@@ -45,11 +172,11 @@
 .skill-card h3 { font-family: var(--font-display); font-size: 16px; font-weight: 600; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
 .skill-card h3 .n { display: none; }
 .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { font-family: var(--font-mono); font-size: 12px; background: var(--bg); color: var(--ink-2); padding: 8px 14px; border-radius: 100px; transition: background 0.2s, color 0.2s; }
-.chip:hover { background: var(--accent); color: var(--ink); }
+.chip { font-family: var(--font-mono); font-size: 12px; background: transparent; color: var(--ink-2); padding: 8px 14px; border: 1px solid var(--line); border-radius: 0; transition: all 0.2s; }
+.chip:hover { background: var(--accent); color: var(--ink); border-color: var(--accent); }
 .langs { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 40px; border-top: 1px solid var(--line); }
 .lab { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-right: 8px; }
-.lang-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: var(--ink); background: var(--surface); padding: 10px 18px; border-radius: 100px; border: 1px solid var(--line); }
+.lang-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: var(--ink); background: transparent; padding: 10px 18px; border-radius: 0; border: 1px solid var(--line); }
 .lang-badge .d { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
 
 /* EXPERIENCE V2 - Vertical Cards */
@@ -192,10 +319,11 @@
 .xp-card-v-tag {
   font-family: var(--font-mono);
   font-size: 11px;
-  background: rgba(0, 0, 0, 0.1);
+  background: transparent;
   color: var(--card-text);
   padding: 5px 10px;
-  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0;
   opacity: 0.8;
 }
 
@@ -574,10 +702,31 @@
 .contact-link .k { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; color: rgba(255,255,255,.45); text-transform: uppercase; }
 .contact-link .v { display: flex; align-items: center; gap: 14px; }
 .phone-btns { display: flex; gap: 10px; }
-.phone-btn { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; padding: 10px 18px; border-radius: 100px; border: 1.5px solid rgba(255,255,255,.25); color: #fff; transition: all .3s var(--ease); }
-.phone-btn:hover { transform: translateY(-2px); }
-.phone-btn.whatsapp:hover { background: #25D366; border-color: #25D366; color: #fff; }
-.phone-btn.call:hover { background: var(--accent); border-color: var(--accent); color: var(--ink); }
+.phone-btn {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 12px 20px;
+  border-radius: 0;
+  background: transparent;
+  border: 3px solid rgba(255,255,255,.6);
+  color: #fff;
+  box-shadow: 3px 3px 0 rgba(255,255,255,.4);
+  transition: all .2s ease;
+  cursor: pointer;
+}
+.phone-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 rgba(255,255,255,.4);
+}
+.phone-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 rgba(255,255,255,.4);
+}
+.phone-btn.whatsapp:hover { background: #25D366; border-color: #25D366; color: #fff; box-shadow: 5px 5px 0 rgba(37, 211, 102, 0.5); }
+.phone-btn.call:hover { background: var(--accent); border-color: var(--accent); color: var(--ink); box-shadow: 5px 5px 0 rgba(224, 122, 95, 0.5); }
 
 /* FOOTER */
 .footer { background: var(--black); padding: 30px 0; border-top: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.55); }

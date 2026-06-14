@@ -383,6 +383,7 @@ export const PORT = {
             en: "What the system does today:\n\n• Automatic import: The administrator uploads the Excel and the system automatically generates all orders, assigns them to drivers, and creates summary reports.\n\n• Live tracking: On a map you can see exactly where each driver is, how many packages they've delivered, and how many are left.\n\n• Delivery evidence: Each package has a photo, name of who received it, exact GPS location, and time. No more \"I think I gave it to a neighbor\".\n\n• Integrated communication: Direct chat between administrator and drivers, no need for external WhatsApp.\n\n• Instant reports: With one click a professional Excel report is generated ready to send to management.\n\nThe design result I'm most proud of: I made a logistics system — something that's typically gray, dense and hard to use — feel modern and pleasant. The people who use it don't feel like they're \"working in a system\", they feel like they're using a tool that makes their life easier.",
           },
           images: ["mendiola-platform/analytics.png"],
+          videos: ["mendiola-platform/analitycs.mp4"],
         },
       ],
     },
