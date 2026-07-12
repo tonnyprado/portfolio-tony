@@ -663,6 +663,88 @@ export const PORT = {
         },
       ],
     },
+    {
+      id: "compila",
+      name: "Compila",
+      hasVideo: false,
+      period: { es: "Jul 2026 - Presente", en: "Jul 2026 - Present" },
+      roleTag: { es: "Fundador & Full-Stack", en: "Founder & Full-Stack" },
+      tagline: {
+        es: "Academia de programación con plataforma educativa completa para gestión de cursos, evaluaciones y comunidad.",
+        en: "Programming academy with a complete educational platform for course management, assessments and community.",
+      },
+      lead: {
+        es: "Plataforma educativa end-to-end para academia de programación. Sistema de gestión completo con roles (Admin, Maestro, Estudiante), módulos educativos, exámenes en línea, foro integrado, sistema de pagos y notificaciones. Arquitectura React con Context API, diseñada para escalar con backend en Supabase.",
+        en: "End-to-end educational platform for a programming academy. Complete management system with roles (Admin, Teacher, Student), educational modules, online exams, integrated forum, payment system and notifications. React architecture with Context API, designed to scale with Supabase backend.",
+      },
+      highlights: {
+        es: [
+          "Sistema de roles completo: Admin gestiona plataforma, Maestro califica y enseña, Estudiante aprende",
+          "Exámenes en línea con timer, auto-submit y calificación automática",
+          "Foro integrado por módulo con posts, respuestas y sistema de moderación",
+          "Sistema de notificaciones con campana dropdown y toast messages",
+          "Gestión de pagos con promociones cada 3 módulos (20% descuento)",
+          "Brand identity completo con design system, mascota animada (Bit) y componentes reutilizables",
+        ],
+        en: [
+          "Complete role system: Admin manages platform, Teacher grades and teaches, Student learns",
+          "Online exams with timer, auto-submit and automatic grading",
+          "Integrated forum per module with posts, replies and moderation system",
+          "Notification system with dropdown bell and toast messages",
+          "Payment management with promotions every 3 modules (20% discount)",
+          "Complete brand identity with design system, animated mascot (Bit) and reusable components",
+        ],
+      },
+      tech: ["React 18", "React Router", "Vite", "GSAP", "Lenis", "Context API", "Supabase (planned)", "Vercel"],
+      link: null,
+      media: {
+        hero: "compila/compila-1.png",
+        video: null,
+        gallery: ["compila/compila-2.png", "compila/compila-3.png", "compila/compila-4.png", "compila/compila-5.png"],
+      },
+      caseSections: [
+        {
+          title: { es: "El problema", en: "The problem" },
+          content: {
+            es: "Crear una academia de programación desde cero requería más que solo contenido educativo — necesitaba una plataforma completa que pudiera manejar todos los aspectos del aprendizaje en línea.\n\nLos retos principales:\n\n• Gestión de usuarios — Administradores necesitaban control total, maestros debían poder calificar y enseñar, estudiantes necesitaban acceso a sus cursos y calificaciones\n\n• Evaluaciones efectivas — Los exámenes tenían que ser justos, con timer para evitar trampas, y fáciles de calificar\n\n• Comunidad — Los estudiantes necesitaban un espacio para hacer preguntas, los maestros debían poder responder rápidamente\n\n• Motivación — Sistema de promociones para incentivar la continuidad de los estudiantes\n\n• Experiencia consistente — Todo debía sentirse parte de la misma marca, con animaciones agradables y diseño intuitivo\n\nCompila resuelve todo esto en una plataforma unificada que funciona tanto para la gestión administrativa como para la experiencia del estudiante.",
+            en: "Creating a programming academy from scratch required more than just educational content — it needed a complete platform that could handle all aspects of online learning.\n\nMain challenges:\n\n• User management — Administrators needed full control, teachers had to be able to grade and teach, students needed access to their courses and grades\n\n• Effective assessments — Exams had to be fair, with a timer to prevent cheating, and easy to grade\n\n• Community — Students needed a space to ask questions, teachers needed to be able to respond quickly\n\n• Motivation — Promotion system to encourage student continuity\n\n• Consistent experience — Everything had to feel part of the same brand, with pleasant animations and intuitive design\n\nCompila solves all of this in a unified platform that works for both administrative management and student experience.",
+          },
+          images: [],
+        },
+        {
+          title: { es: "Mi proceso de diseño", en: "My design process" },
+          content: {
+            es: "Empecé creando un brand guideline completo antes de escribir código:\n\n• Brand Identity — Desarrollé \"Compila\" como marca con logo, colores, tipografías y una mascota (Bit, un robot estudiante con pantalla como cara)\n\n• Sistema de diseño — Creé design tokens centralizados: colores (naranja, crema, pizarra, tinta), tipografías (Baloo 2 para títulos, Press Start 2P para acentos pixel, IBM Plex para código y texto)\n\n• Componentes reutilizables — Diseñé componentes base que se usan en toda la plataforma: PaperCard (tarjetas con efecto papel inclinado), Button (3 variantes), GridSection (secciones con retícula), Bit (mascota animada con 5 expresiones)\n\n• Experiencias por rol — Cada usuario ve una interfaz adaptada a sus necesidades:\n  - Admin: Panel de control con estadísticas, gestión de usuarios, módulos, pagos y soporte\n  - Maestro: Dashboard con foro integrado, gestión de módulos y calificaciones\n  - Estudiante: Dashboard con próximas clases, módulos inscritos, notificaciones y accesos rápidos\n\n• Animaciones mecánicas — Usé GSAP con easings duros (power1/power2) para animaciones que se sienten \"digitales\" y no suaves, coherente con la estética de programación",
+            en: "I started by creating a complete brand guideline before writing code:\n\n• Brand Identity — Developed \"Compila\" as a brand with logo, colors, typography and a mascot (Bit, a student robot with a screen as a face)\n\n• Design system — Created centralized design tokens: colors (orange, cream, chalkboard, ink), typography (Baloo 2 for titles, Press Start 2P for pixel accents, IBM Plex for code and text)\n\n• Reusable components — Designed base components used throughout the platform: PaperCard (cards with tilted paper effect), Button (3 variants), GridSection (sections with grid), Bit (animated mascot with 5 expressions)\n\n• Role-based experiences — Each user sees an interface adapted to their needs:\n  - Admin: Control panel with statistics, user management, modules, payments and support\n  - Teacher: Dashboard with integrated forum, module management and grading\n  - Student: Dashboard with upcoming classes, enrolled modules, notifications and quick access\n\n• Mechanical animations — Used GSAP with hard easings (power1/power2) for animations that feel \"digital\" and not smooth, consistent with the programming aesthetic",
+          },
+          images: ["compila/compila-1.png", "compila/compila-2.png"],
+        },
+        {
+          title: { es: "Arquitectura técnica", en: "Technical architecture" },
+          content: {
+            es: "Diseñé una arquitectura escalable que actualmente funciona con datos locales pero está lista para migrar a backend:\n\n• Frontend moderno — React 18 con Vite para desarrollo rápido, React Router v6 con lazy loading para optimizar carga\n\n• Gestión de estado — Context API con 3 contextos principales:\n  - AuthContext: maneja autenticación y usuario actual\n  - NotificationContext: sistema de toast messages\n  - EnrollmentContext: flujo de inscripción a módulos\n\n• Persistencia — localStorage para sesión y datos (migración a Supabase planificada)\n\n• Animaciones avanzadas — GSAP para transiciones de página, scroll-reveal y efectos hover; Lenis para smooth scroll en desktop\n\n• Servicios — Lógica de negocio separada en módulos:\n  - enrollmentService: validaciones y creación de inscripciones\n  - Sistema de notificaciones persistentes\n  - Simulación de emails (será SendGrid/AWS SES en producción)\n\n• Componentes de animación — Wrappers reutilizables: AnimatedSection, PageTransition, StaggerContainer\n\n• Deploy — Vercel para frontend, Supabase para backend (próximamente)",
+            en: "I designed a scalable architecture that currently works with local data but is ready to migrate to backend:\n\n• Modern frontend — React 18 with Vite for fast development, React Router v6 with lazy loading for load optimization\n\n• State management — Context API with 3 main contexts:\n  - AuthContext: handles authentication and current user\n  - NotificationContext: toast message system\n  - EnrollmentContext: module enrollment flow\n\n• Persistence — localStorage for session and data (Supabase migration planned)\n\n• Advanced animations — GSAP for page transitions, scroll-reveal and hover effects; Lenis for smooth scroll on desktop\n\n• Services — Business logic separated into modules:\n  - enrollmentService: validations and enrollment creation\n  - Persistent notification system\n  - Email simulation (will be SendGrid/AWS SES in production)\n\n• Animation components — Reusable wrappers: AnimatedSection, PageTransition, StaggerContainer\n\n• Deploy — Vercel for frontend, Supabase for backend (coming soon)",
+          },
+          images: [],
+        },
+        {
+          title: { es: "Funcionalidades clave", en: "Key features" },
+          content: {
+            es: "Sistema de Exámenes:\n• Exámenes en línea con timer visible y countdown\n• Preguntas de múltiple opción y código\n• Auto-submit cuando expira el tiempo\n• Calificación automática con feedback\n• Vista de resultados con respuestas correctas e incorrectas\n\nSistema de Calificaciones:\n• Maestros califican con nota numérica (0-100)\n• Retroalimentación general sobre el trabajo\n• Observaciones específicas (comentarios detallados sobre código)\n• Vista de historial de calificaciones para estudiantes\n\nForo Integrado:\n• Posts por módulo con título y contenido\n• Sistema de respuestas anidadas\n• Fijar posts importantes (solo maestros/admin)\n• Eliminar posts (moderación)\n• Badge de módulo en cada post\n\nSistema de Notificaciones:\n• Campana con contador de notificaciones sin leer\n• Dropdown con lista de notificaciones ordenadas por fecha\n• Marcar como leída al hacer clic\n• Botón \"Marcar todas como leídas\"\n• Animación de pulso cuando llegan nuevas notificaciones\n• Toast messages para feedback inmediato (éxito, error, info, warning)\n\nSistema de Promociones:\n• 20% de descuento cada 3 módulos completados\n• Progreso visual hacia siguiente promoción\n• Historial de pagos con filtros",
+            en: "Exam System:\n• Online exams with visible timer and countdown\n• Multiple choice and code questions\n• Auto-submit when time expires\n• Automatic grading with feedback\n• Results view with correct and incorrect answers\n\nGrading System:\n• Teachers grade with numeric score (0-100)\n• General feedback about the work\n• Specific observations (detailed comments on code)\n• Grade history view for students\n\nIntegrated Forum:\n• Posts per module with title and content\n• Nested reply system\n• Pin important posts (teachers/admin only)\n• Delete posts (moderation)\n• Module badge on each post\n\nNotification System:\n• Bell with unread notification counter\n• Dropdown with list of notifications sorted by date\n• Mark as read on click\n• \"Mark all as read\" button\n• Pulse animation when new notifications arrive\n• Toast messages for immediate feedback (success, error, info, warning)\n\nPromotion System:\n• 20% discount every 3 completed modules\n• Visual progress towards next promotion\n• Payment history with filters",
+          },
+          images: ["compila/compila-4.png", "compila/compila-5.png"],
+        },
+        {
+          title: { es: "Resultado e impacto", en: "Result & impact" },
+          content: {
+            es: "• Plataforma educativa completa funcional con 3 roles distintos\n• 15+ páginas con rutas protegidas por rol\n• Sistema de exámenes en línea con timer y auto-calificación\n• Foro integrado para comunicación estudiante-maestro\n• Sistema de notificaciones dual (toast + persistentes)\n• Gestión de pagos con promociones automáticas\n• Brand identity completa con 10+ componentes reutilizables\n• Sistema de animaciones coherente con GSAP + Lenis\n• Arquitectura lista para migración a Supabase + Vercel\n• Sistema de inscripción con validaciones y emails automáticos\n• Panel de administración con gestión completa de usuarios, módulos y contenido\n• Sistema de soporte con tickets categorizados",
+            en: "• Complete functional educational platform with 3 distinct roles\n• 15+ pages with role-protected routes\n• Online exam system with timer and auto-grading\n• Integrated forum for student-teacher communication\n• Dual notification system (toast + persistent)\n• Payment management with automatic promotions\n• Complete brand identity with 10+ reusable components\n• Consistent animation system with GSAP + Lenis\n• Architecture ready for Supabase + Vercel migration\n• Enrollment system with validations and automatic emails\n• Admin panel with complete management of users, modules and content\n• Support system with categorized tickets",
+          },
+          images: ["compila/compila-3.png"],
+        },
+      ],
+    },
   ],
 };
 
