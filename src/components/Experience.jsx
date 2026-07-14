@@ -8,13 +8,21 @@ const CARD_COLORS = [
   { bg: '#E07A5F', text: '#fff' },     // Coral
 ];
 
-function Experience({ lang }) {
+function Experience({ lang, onNavigateToPortfolio }) {
   const x = PORT.ui.experience;
   const t = (o) => o[lang];
   const [expandedCard, setExpandedCard] = useState(null);
 
   const handleCardClick = (index) => {
     setExpandedCard(expandedCard === index ? null : index);
+  };
+
+  const handlePortfolioClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onNavigateToPortfolio) {
+      onNavigateToPortfolio();
+    }
   };
 
   return (
@@ -73,6 +81,11 @@ function Experience({ lang }) {
                           <span className="xp-card-v-tag" key={tech}>{tech}</span>
                         ))}
                       </div>
+                      {exp.link && (
+                        <a href={exp.link} className="xp-card-v-link" onClick={handlePortfolioClick}>
+                          {lang === 'es' ? 'Ver proyectos →' : 'View projects →'}
+                        </a>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>

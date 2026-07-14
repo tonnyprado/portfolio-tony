@@ -71,6 +71,10 @@ function AboutPage() {
     startSvgDrawTransition('/', 'contact');
   };
 
+  const handleNavigateToPortfolio = () => {
+    startSvgDrawTransition('/portfolio');
+  };
+
   const introText = INTRO_TEXT[lang];
   const words = introText.split(' ');
 
@@ -119,7 +123,7 @@ function AboutPage() {
 
       <main className="about-main-content">
         <AboutIntro lang={lang} />
-        <Experience lang={lang} />
+        <Experience lang={lang} onNavigateToPortfolio={handleNavigateToPortfolio} />
         <SkillsCarousel lang={lang} />
         <Education lang={lang} />
         <Footer lang={lang} />

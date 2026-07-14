@@ -18,7 +18,18 @@ const LABELS = {
   },
   grid: { es: 'Cuadros', en: 'Grid' },
   list: { es: 'Lista', en: 'List' },
-  viewProject: { es: 'Ver proyecto', en: 'View project' }
+  viewProject: { es: 'Ver proyecto', en: 'View project' },
+  experienceCta: {
+    title: {
+      es: 'También trabajé en proyectos enterprise a gran escala',
+      en: 'I also worked on large-scale enterprise projects'
+    },
+    description: {
+      es: '4 años en IBM desarrollando microservicios Spring Boot para banca, sirviendo millones de transacciones.',
+      en: '4 years at IBM developing Spring Boot microservices for banking, serving millions of transactions.'
+    },
+    button: { es: 'Ver experiencia →', en: 'View experience →' }
+  }
 };
 
 function PortfolioPage() {
@@ -42,6 +53,11 @@ function PortfolioPage() {
 
   const handleGetInTouch = () => {
     startSvgDrawTransition('/', 'contact');
+  };
+
+  const handleViewExperience = (e) => {
+    e.preventDefault();
+    startSvgDrawTransition('/', 'experience');
   };
 
   return (
@@ -135,6 +151,16 @@ function PortfolioPage() {
             ))}
           </div>
         )}
+
+        <div className="v2-portfolio-experience-cta">
+          <div className="v2-portfolio-experience-cta-content">
+            <h2 className="v2-portfolio-experience-cta-title">{t(LABELS.experienceCta.title)}</h2>
+            <p className="v2-portfolio-experience-cta-description">{t(LABELS.experienceCta.description)}</p>
+            <button className="btn btn-accent" onClick={handleViewExperience}>
+              {t(LABELS.experienceCta.button)}
+            </button>
+          </div>
+        </div>
       </main>
 
       <Footer lang={lang} />
