@@ -279,6 +279,88 @@ export const PORT = {
   /* ---------- PROJECTS ---------- */
   projectList: [
     {
+      id: "artefacto",
+      name: "ARTE FACTO",
+      hasVideo: false,
+      period: { es: "Ago 2026 - Presente", en: "Aug 2026 - Present" },
+      roleTag: { es: "Full-Stack Dev", en: "Full-Stack Dev" },
+      tagline: {
+        es: "Plataforma digital para feria de arte con sistema de registro de artistas, votaciones de curadores y gestión de fases.",
+        en: "Digital platform for art fair with artist registration system, curator voting and phase management.",
+      },
+      lead: {
+        es: "Plataforma web completa para ARTE FACTO, una feria de arte que conecta artistas emergentes con curadores. Sistema de registro con carga de archivos a AWS S3, panel de votaciones para curadores, gestión de fases de convocatoria con descuentos progresivos, y dashboard administrativo completo. Arquitectura monorepo con Next.js 14 y Express.js.",
+        en: "Complete web platform for ARTE FACTO, an art fair connecting emerging artists with curators. Registration system with file uploads to AWS S3, curator voting panel, call-for-entry phase management with progressive discounts, and comprehensive admin dashboard. Monorepo architecture with Next.js 14 and Express.js.",
+      },
+      highlights: {
+        es: [
+          "Sistema de registro de artistas con carga de CV, portafolio e identificación a AWS S3",
+          "Panel de votaciones para curadores con votos binarios y comentarios por fase",
+          "Gestión de 4 fases de convocatoria con descuentos progresivos (20%, 10%, 0%)",
+          "Dashboard administrativo con estadísticas, gestión de artistas y exportación a Excel",
+          "Sistema de paquetes 2D (pared) y 3D (piso) con precios dinámicos",
+          "Autenticación JWT con roles (Admin, Curador) y rate limiting de seguridad",
+        ],
+        en: [
+          "Artist registration system with CV, portfolio and ID uploads to AWS S3",
+          "Curator voting panel with binary votes and comments per phase",
+          "4-phase call management with progressive discounts (20%, 10%, 0%)",
+          "Admin dashboard with statistics, artist management and Excel export",
+          "2D (wall) and 3D (floor) package system with dynamic pricing",
+          "JWT authentication with roles (Admin, Curator) and security rate limiting",
+        ],
+      },
+      tech: ["Next.js 14", "React 18", "Tailwind CSS", "Zustand", "Express.js", "PostgreSQL", "AWS S3", "AWS RDS", "JWT"],
+      link: "https://arte-facto.mx",
+      media: {
+        hero: "artefacto/artefacto-hero.png",
+        video: null,
+        gallery: [],
+      },
+      caseSections: [
+        {
+          title: { es: "El problema", en: "The problem" },
+          content: {
+            es: "ARTE FACTO es una feria de arte que necesitaba digitalizar todo su proceso de convocatoria y selección de artistas. Antes, todo se manejaba por email y hojas de cálculo:\n\n• Los artistas enviaban sus portafolios por correo electrónico, lo que hacía difícil organizarlos\n• Los curadores no tenían un sistema para votar de forma coordinada\n• No había visibilidad del estado de las inscripciones en tiempo real\n• La gestión de fases de convocatoria (con diferentes precios) era manual y propensa a errores\n\nMi objetivo fue crear una plataforma donde todo el proceso fuera digital: desde que un artista se registra hasta que los curadores votan y se seleccionan los participantes finales.",
+            en: "ARTE FACTO is an art fair that needed to digitize their entire artist call and selection process. Before, everything was handled via email and spreadsheets:\n\n• Artists sent their portfolios by email, making organization difficult\n• Curators had no system for coordinated voting\n• There was no real-time visibility of registration status\n• Managing call phases (with different prices) was manual and error-prone\n\nMy goal was to create a platform where the entire process was digital: from when an artist registers to when curators vote and final participants are selected.",
+          },
+          images: [],
+        },
+        {
+          title: { es: "Mi proceso de diseño", en: "My design process" },
+          content: {
+            es: "Identifiqué tres tipos de usuarios con necesidades muy diferentes:\n\n• Artistas (público): Necesitan registrarse fácilmente, subir sus documentos y recibir confirmación de que su registro fue exitoso.\n\n• Curadores: Necesitan revisar los portafolios de los artistas registrados y votar de forma rápida e intuitiva, pudiendo agregar comentarios.\n\n• Administradores: Necesitan ver estadísticas, gestionar fases, aprobar/rechazar artistas, y exportar datos para reportes.\n\nDiseñé flujos separados para cada uno:\n\n1. Landing pública atractiva que explica la feria y lleva al registro\n2. Panel de curador enfocado en la votación eficiente\n3. Dashboard administrativo con toda la información centralizada\n\nPara el estilo visual elegí una estética moderna y artística que reflejara la naturaleza creativa del evento.",
+            en: "I identified three types of users with very different needs:\n\n• Artists (public): Need to register easily, upload their documents and receive confirmation that their registration was successful.\n\n• Curators: Need to review portfolios of registered artists and vote quickly and intuitively, being able to add comments.\n\n• Administrators: Need to see statistics, manage phases, approve/reject artists, and export data for reports.\n\nI designed separate flows for each:\n\n1. Attractive public landing that explains the fair and leads to registration\n2. Curator panel focused on efficient voting\n3. Admin dashboard with all information centralized\n\nFor the visual style I chose a modern and artistic aesthetic that reflects the creative nature of the event.",
+          },
+          images: [],
+        },
+        {
+          title: { es: "Arquitectura técnica", en: "Technical architecture" },
+          content: {
+            es: "Estructuré el proyecto como un monorepo con tres partes principales:\n\n• Frontend (Next.js 14 + App Router): Landing pública, sistema de registro con formularios complejos, paneles de curador y admin. Usé Zustand para manejar el estado de forma simple y Tailwind CSS para estilos.\n\n• Backend (Express.js): API REST completa con 17 archivos de rutas. Autenticación JWT con roles, rate limiting para seguridad, y middlewares de validación con express-validator.\n\n• Base de datos (PostgreSQL en AWS RDS): 14 tablas que manejan usuarios, artistas, obras, fases, votaciones, paquetes e inscripciones. Diseñé el esquema pensando en la escalabilidad.\n\n• Almacenamiento (AWS S3): Los archivos de los artistas (CV, portafolio, identificación) se suben directamente a S3 con compresión de imágenes usando Sharp.\n\n• Infraestructura: Railway para el backend, Vercel para el frontend, AWS RDS para la base de datos. Esta combinación permite escalar cada parte independientemente.",
+            en: "I structured the project as a monorepo with three main parts:\n\n• Frontend (Next.js 14 + App Router): Public landing, registration system with complex forms, curator and admin panels. Used Zustand for simple state management and Tailwind CSS for styles.\n\n• Backend (Express.js): Complete REST API with 17 route files. JWT authentication with roles, rate limiting for security, and validation middlewares with express-validator.\n\n• Database (PostgreSQL on AWS RDS): 14 tables handling users, artists, artworks, phases, votes, packages and registrations. I designed the schema with scalability in mind.\n\n• Storage (AWS S3): Artist files (CV, portfolio, ID) upload directly to S3 with image compression using Sharp.\n\n• Infrastructure: Railway for backend, Vercel for frontend, AWS RDS for database. This combination allows scaling each part independently.",
+          },
+          images: [],
+        },
+        {
+          title: { es: "Desafíos y soluciones", en: "Challenges & solutions" },
+          content: {
+            es: "Sistema de fases con precios dinámicos: La feria tiene 4 fases de convocatoria, cada una con diferentes descuentos. Diseñé un sistema donde los administradores pueden abrir/cerrar inscripciones y votaciones por fase, y los precios se calculan automáticamente según la fase activa.\n\nCarga de archivos pesados: Los artistas necesitan subir portafolios con múltiples imágenes. Implementé compresión de imágenes en el navegador antes de subirlas, y carga directa a S3 para no saturar el servidor.\n\nProtección contra abusos: Implementé rate limiting con diferentes niveles:\n- General: 100 requests/15 minutos\n- Login: 5 intentos/15 minutos\n- Registro: 10/hora\n\nVotaciones justas: Los curadores solo pueden votar una vez por artista por fase. El sistema verifica duplicados antes de registrar cada voto.\n\nSeguridad: CORS configurado para orígenes específicos, Helmet.js para headers de seguridad, bcrypt para contraseñas, y JWT con expiración de 7 días.",
+            en: "Phase system with dynamic pricing: The fair has 4 call phases, each with different discounts. I designed a system where administrators can open/close registrations and voting per phase, and prices are calculated automatically based on the active phase.\n\nHeavy file uploads: Artists need to upload portfolios with multiple images. I implemented browser-side image compression before uploading, and direct upload to S3 to avoid saturating the server.\n\nAbuse protection: Implemented rate limiting at different levels:\n- General: 100 requests/15 minutes\n- Login: 5 attempts/15 minutes\n- Registration: 10/hour\n\nFair voting: Curators can only vote once per artist per phase. The system checks for duplicates before registering each vote.\n\nSecurity: CORS configured for specific origins, Helmet.js for security headers, bcrypt for passwords, and JWT with 7-day expiration.",
+          },
+          images: [],
+        },
+        {
+          title: { es: "Resultado e impacto", en: "Result & impact" },
+          content: {
+            es: "Plataforma completa en producción:\n\n• Landing page pública con información de la feria, calendario y formulario de contacto\n• Sistema de registro de artistas con carga de múltiples archivos (CV, portafolio, identificación)\n• Panel de votaciones para curadores con filtros por fase y estado\n• Dashboard administrativo con estadísticas en tiempo real\n• Exportación de datos a Excel para reportes\n• Sistema de notificaciones por email con Brevo\n• Gestión de paquetes 2D y 3D con beneficios configurables\n\nEl sistema digitaliza completamente el proceso que antes tomaba semanas de emails y hojas de cálculo, permitiendo a los organizadores enfocarse en curar el arte en lugar de administrar papeles.\n\nPróxima fase: Sistema de pagos integrado para que los artistas seleccionados puedan pagar su participación directamente en la plataforma.",
+            en: "Complete platform in production:\n\n• Public landing page with fair information, calendar and contact form\n• Artist registration system with multiple file uploads (CV, portfolio, ID)\n• Curator voting panel with filters by phase and status\n• Admin dashboard with real-time statistics\n• Data export to Excel for reports\n• Email notification system with Brevo\n• 2D and 3D package management with configurable benefits\n\nThe system completely digitizes the process that used to take weeks of emails and spreadsheets, allowing organizers to focus on curating art instead of managing paperwork.\n\nNext phase: Integrated payment system so selected artists can pay their participation directly on the platform.",
+          },
+          images: [],
+        },
+      ],
+    },
+    {
       id: "marnee",
       name: "MARNEE",
       hasVideo: true,
